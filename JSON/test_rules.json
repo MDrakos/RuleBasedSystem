@@ -1,0 +1,10 @@
+[
+  {
+    "antecedent" : "prefers Apple",
+    "consequent" : "Apple phone"
+  },
+  {
+    "antecedent" : "prefers Samsung",
+    "consequent" : "Samsung phone"
+  }
+]
