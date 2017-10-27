@@ -1,6 +1,7 @@
 import json
 
 from Components.Rule import Rule
+from Components.KnowledgeBase import KnowledgeBase
 
 
 def load_rules(filepath):
@@ -11,5 +12,8 @@ def load_rules(filepath):
             add = Rule(rule['antecedent'], rule['consequent'])
             rules.append(add)
 
-    print(rules[0].antecedent, rules[0].consequent)
+    kb = KnowledgeBase(rules)
+
+    for rul in kb.get_rules():
+        print(rul.get_antecedent(), rul.get_consequent())
 
