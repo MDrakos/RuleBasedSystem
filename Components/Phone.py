@@ -1,38 +1,54 @@
 class Phone:
-    def __init__(self, model, cpu, cpuSpec, gpu, storageCapacity, removeableStorage, ram, os, customLauncher,
-                 dimensions, weight, battery, display, camera):
-
-        if (model and cpu and cpuSpec and gpu and storageCapacity and removeableStorage and ram and os and customLauncher
-                and dimensions and weight and battery and display and camera) is None:
-            self.set_default_specifications()
+    def __init__(self, attributes=None):
+        if attributes is None:
+            attributes = {}
         else:
-            self.model = model
-            self.cpu = cpu
-            self.cpuSpec = cpuSpec
-            self.gpu = gpu
-            self.storageCapacity = storageCapacity
-            self.removeableStorage = removeableStorage
-            self.ram = ram
-            self.os = os
-            self.customLauncher = customLauncher
-            self.dimensions = dimensions
-            self.weight = weight
-            self.battery = battery
-            self.display = display
-            self.camera = camera
+            self.attributes = attributes
 
-    def set_default_specifications(self):
-        self.model = ""
-        self.cpu = ""
-        self.cpuSpec = ""
-        self.gpu = ""
-        self.storageCapacity = ""
-        self.removeableStorage = ""
-        self.ram = ""
-        self.os = ""
-        self.customLauncher = ""
-        self.dimensions = ""
-        self.weight = ""
-        self.battery = ""
-        self.display = ""
-        self.camera = ""
+    def set_attributes(self, attributes):
+        self.attributes = attributes
+
+    def get_attributes(self):
+        return self.attributes
+
+    def get_model(self):
+        return self.attributes['model']
+
+    def get_cpu(self):
+        return self.attributes['cpu']
+
+    def get_cpu_specifications(self):
+        return self.attributes['cpuSpecifications']
+
+    def get_gpu(self):
+        return self.attributes['gpu']
+
+    def get_storage_capacity(self):
+        return self.attributes['storageCapacity']
+
+    def get_removable_storage(self):
+        return self.attributes['removableStorage']
+
+    def get_ram(self):
+        return self.attributes['ram']
+
+    def get_os(self):
+        return self.attributes['os']
+
+    def get_custom_lanucher(self):
+        return self.attributes['customLlauncher']
+
+    def get_dimensions(self):
+        return self.attributes['dimensions']
+
+    def get_weight(self):
+        return self.attributes['weight']
+
+    def get_battery(self):
+        return self.attributes['battery']
+
+    def get_display(self):
+        return self.attributes['display']
+
+    def get_camera(self):
+        return self.attributes['camera']

@@ -1,0 +1,10 @@
+- Need to add some questions, rules and tie them together
+- Inference engine will cycle through the rules and answers and based on answers will select a phone
+- Need to add more phones in the 'phones.json' format
+- Questions should also be in JSON format
+- Need to add GUI
+    - Ask user for name
+    - Display questions
+    - Display final answer and explanation as to why
+    - Maybe allow users to add rules on the fly (Not required but would be nice)
+    - Allow user to see all rules and answers (not necessary)

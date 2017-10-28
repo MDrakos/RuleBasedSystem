@@ -1,0 +1,18 @@
+[
+  {
+    "model"             : "Samsung Galaxy Note 8",
+    "cpu"               : "Snapdragon 835 Exynos 8895",
+    "cpuSpecifications" : "Octa-core, 2.35 GHz",
+    "gpu"               : "Adreno 540 ARM Mali-G71 MP20",
+    "storageCapacity"   : "64/128/256 GB",
+    "removableStorage"  : "256GB microSDXC",
+    "ram"               : "6 GB",
+    "os"                : "Android 7.1.1 Nougat",
+    "customLauncher"    : "Touch wiz",
+    "dimensions"        : "162.5 x 74.8 x 8.6 mm",
+    "weight"            : "195 g",
+    "battery"           : "3300 mAh Li-Ion, non-removable battery",
+    "display"           : "6.3, 2960x1440",
+    "camera"            : "Dual 12 MP (rear camera), 8 MP (front camera)"
+  }
+]
