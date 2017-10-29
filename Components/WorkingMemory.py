@@ -2,10 +2,10 @@ from Components.Phone import Phone
 
 
 class WorkingMemory:
-    def __init__(self, user, rules, phone):
+    def __init__(self, user, rules, phone=Phone()):
         self.user = user
         self.rules = rules
-        self.phone = Phone()
+        self.phone = phone
 
     def set_user(self, user):
         self.user = user

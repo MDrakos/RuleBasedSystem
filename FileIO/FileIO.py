@@ -10,9 +10,10 @@ def load_rules(filepath):
     with open(filepath) as json_data:
         data = json.load(json_data)
         for rule in data:
-            add = Rule(rule['antecedent'], rule['consequent'])
+            add = Rule(rule['antecedent'], rule['consequent'], rule['topic'])
             rules.append(add)
 
+    return rules
     # kb = KnowledgeBase(rules)
     #
     # for rul in kb.get_rules():
@@ -52,4 +53,6 @@ def load_questions(filepath):
             quest.set_possible_answers(answers)
             questions.append(quest)
 
-    print(questions[1].get_topic())
+    return questions
+
+    # print(questions[1].get_topic())

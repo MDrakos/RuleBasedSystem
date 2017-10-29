@@ -1,10 +1,22 @@
 [
   {
     "antecedent" : "prefers Apple",
-    "consequent" : "Apple phone"
+    "topic"      : "brand",
+    "consequent" : "Apple"
   },
   {
     "antecedent" : "prefers Samsung",
-    "consequent" : "Samsung phone"
+    "topic"      : "brand",
+    "consequent" : "Samsung"
+  },
+  {
+    "antecedent" : ">1000",
+    "topic"      : "price",
+    "consequent" : "expensive"
+  },
+  {
+    "antecedent" : ["Samsung", "expensive"],
+    "topic"      : "",
+    "consequent" : "Samsung Galaxy Note 8"
   }
 ]
