@@ -1,0 +1,16 @@
+[
+  {
+    "question"  : "What brand do you prefer?",
+    "topic"     : "brand",
+    "answer1"   : "Apple",
+    "answer2"   : "Samsung",
+    "answer3"   : "LG"
+  },
+  {
+    "question"  : "What is your budget?",
+    "topic"     : "price",
+    "answer1"   : "<200",
+    "answer2"   : "<500",
+    "answer3"   : ">1000"
+  }
+]
