@@ -25,9 +25,11 @@ def load_phones(filepath):
     with open(filepath) as json_data:
         data = json.load(json_data)
         for phone in data:
+            print(phone)
             for attribute in phone:
                 attributes[attribute] = phone.get(attribute)
                 # print(attribute, phone.get(attribute))
             phones.append(Phone(attributes))
+            attributes = {}
 
     print(phones[0].get_attributes())

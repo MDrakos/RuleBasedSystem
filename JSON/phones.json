@@ -14,5 +14,20 @@
     "battery"           : "3300 mAh Li-Ion, non-removable battery",
     "display"           : "6.3, 2960x1440",
     "camera"            : "Dual 12 MP (rear camera), 8 MP (front camera)"
+  },
+  {
+    "model": "Pixel 2 XL",
+    "cpu": "Snapdragon 835",
+    "cpuSpecifications": "Octa-core, 2.45 GHz",
+    "gpu": "Adreno 540",
+    "storageCapacity": "64 GB or 128 GB",
+    "removableStorage": "None",
+    "ram": "4 GB LPDDR4X",
+    "os": "Android 8.0 Oreo",
+    "dimensions": "157.9 x 76.7 x 7.9 mm",
+    "weight": "175 g",
+    "battery": "3,520 mAh",
+    "display": "6, 2880 x 1440",
+    "camera": "12.2 MP (rear camera), 8 MP (front camera)"
   }
 ]
