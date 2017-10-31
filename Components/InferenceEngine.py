@@ -29,4 +29,4 @@ class InferenceEngine:
                         if antecedents == attributes:
                             user.set_phone(rule.get_consequent())
 
-        print(user.get_phone())
+        # print(user.get_phone())
