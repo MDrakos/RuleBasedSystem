@@ -1,10 +1,9 @@
 class User:
-    def __init__(self, first_name, last_name, answers=[], brand="", price="", phone=[]):
+    def __init__(self, first_name, last_name, answers=[], attributes={}, phone=[]):
         self.first_name = first_name
         self.last_name = last_name
         self.answers = answers
-        self.brand = brand
-        self.price = price
+        self.attributes = attributes
         self.phone = phone
 
     def set_answers(self, answers):
@@ -16,11 +15,11 @@ class User:
     def set_phone(self, phone):
         self.phone = phone
 
-    def set_brand(self, brand):
-        self.brand = brand
+    def set_attributes(self, attributes):
+        self.attributes = attributes
 
-    def set_price(self, price):
-        self.price = price
+    def add_attribute(self, topic, value):
+        self.attributes[topic] = value
 
     def get_first_name(self):
         return self.first_name
@@ -30,6 +29,9 @@ class User:
 
     def get_answers(self):
         return self.answers
+
+    def get_attributes(self):
+        return self.attributes
 
     def get_phone(self):
         return self.phone
