@@ -10,6 +10,11 @@
     "consequent" : "Samsung"
   },
   {
+    "antecedent" : "~500",
+    "topic"      : "price",
+    "consequent" : "medium"
+  },
+  {
     "antecedent" : ">1000",
     "topic"      : "price",
     "consequent" : "expensive"
@@ -21,6 +26,14 @@
     },
     "topic"      : "phone",
     "consequent" : "Apple iPhone X"
+  },
+  {
+    "antecedent" : {
+      "brand" : "Apple",
+      "price" : "medium"
+    },
+    "topic"      : "phone",
+    "consequent" : "Apple iPhone 8 Plus"
   },
   {
     "antecedent" : {
