@@ -15,12 +15,21 @@ def test_file_io():
 
 
 def test_process():
+    user = User()
+    wm = WorkingMemory()
     rules = FileIO.load_rules('JSON/test_rules.json')
     phones = FileIO.load_phones('JSON/phones.json')
     questions = FileIO.load_questions('JSON/test_questions.json')
 
-    user = User("Mike", "Drakos")
-    for question in questions:
+    user.set_user_first_name("Mike")
+    user.set_user_last_name("Drakos")
+
+    wm.set_user(user)
+    wm.set_rules(rules)
+    wm.set_phones(phones)
+    wm.set_questions(questions)
+
+    for question in wm.get_questions():
         print(question.get_question())
         for answer in question.get_possible_answers():
             print(answer)
@@ -29,7 +38,6 @@ def test_process():
         user_answer = Answer(user_answer_topic, user_answer_content)
         user.set_answer(user_answer)
 
-    wm = WorkingMemory(user, rules, phones)
     infer = InferenceEngine(wm)
     infer.infer()
 
