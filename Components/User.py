@@ -1,10 +1,16 @@
 class User:
-    def __init__(self, first_name, last_name, answers=[], attributes={}, phone=[]):
+    def __init__(self, first_name="", last_name="", answers=[], attributes={}, phone=[]):
         self.first_name = first_name
         self.last_name = last_name
         self.answers = answers
         self.attributes = attributes
         self.phone = phone
+
+    def set_user_first_name(self, first_name):
+        self.first_name = first_name
+
+    def set_user_last_name(self, last_name):
+        self.last_name = last_name
 
     def set_answers(self, answers):
         self.answers = answers

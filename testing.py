@@ -5,6 +5,7 @@ from Components.Answer import Answer
 from Components.WorkingMemory import WorkingMemory
 from Components.InferenceEngine import InferenceEngine
 
+
 def test_file_io():
     FileIO.load_rules('JSON/test_rules.json')
     FileIO.load_phones('JSON/phones.json')
@@ -15,7 +16,7 @@ def test_file_io():
 
 def test_process():
     rules = FileIO.load_rules('JSON/test_rules.json')
-    FileIO.load_phones('JSON/phones.json')
+    phones = FileIO.load_phones('JSON/phones.json')
     questions = FileIO.load_questions('JSON/test_questions.json')
 
     user = User("Mike", "Drakos")
@@ -28,7 +29,7 @@ def test_process():
         user_answer = Answer(user_answer_topic, user_answer_content)
         user.set_answer(user_answer)
 
-    wm = WorkingMemory(user, rules)
+    wm = WorkingMemory(user, rules, phones)
     infer = InferenceEngine(wm)
     infer.infer()
 
