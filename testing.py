@@ -23,7 +23,7 @@ def test_process():
 
     # Import rules, phones, and questions
     rules = FileIO.load_rules('JSON/test_rules.json')
-    phones = FileIO.load_phones('JSON/new_phones.json')
+    phones = FileIO.load_phones('JSON/phones.json')
     questions = FileIO.load_questions('JSON/test_questions.json')
 
     # Store rules in Knowledge Base

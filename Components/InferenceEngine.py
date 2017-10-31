@@ -24,15 +24,14 @@ class InferenceEngine:
                 if answer.get_topic() == rule.get_topic():
                     if answer.get_content() in rule.get_antecedent():
                         consequents.append(rule.consequent)
-                        user.add_attribute(rule.get_topic(), rule.get_antecedent())
+                        user.add_attribute(rule.get_topic(), rule.get_consequent())
 
         for rule in rules:
+            # Isolate rules with complex antecedents
             if isinstance(rule.get_antecedent(), dict):
-                for antecedents in rule.get_antecedent():
-                    for attributes in user.get_attributes():
-                        if antecedents == attributes:
-                            for phone in phones:
-                                if rule.get_consequent() in phone.get_model():
-                                    user.set_phone(phone)
-
-        # print(user.get_phone())
+                rule_antecedents = rule.get_antecedent()
+                user_attributes = user.get_attributes()
+                if rule_antecedents.items() == user_attributes.items():
+                    for phone in phones:
+                        if rule.get_consequent() in phone.get_model():
+                            user.set_phone(phone)
