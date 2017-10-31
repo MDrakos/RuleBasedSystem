@@ -1,6 +1,3 @@
-from Components.Phone import Phone
-
-
 class WorkingMemory:
     def __init__(self, user, rules=[], phones=[]):
         self.user = user
