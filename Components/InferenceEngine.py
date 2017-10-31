@@ -19,6 +19,8 @@ class InferenceEngine:
         rules = self.working_memory.get_rules()
         phones = self.working_memory.get_phones()
         consequents = []
+
+        # First, for basic rules add their consequences as user attributes
         for answer in user.get_answers():
             for rule in rules:
                 if answer.get_topic() == rule.get_topic():
@@ -26,6 +28,8 @@ class InferenceEngine:
                         consequents.append(rule.consequent)
                         user.add_attribute(rule.get_topic(), rule.get_consequent())
 
+        # For rules with a complex antecedent compare the antecedent with the user attributes
+        # and fire the correct rule
         for rule in rules:
             # Isolate rules with complex antecedents
             if isinstance(rule.get_antecedent(), dict):
