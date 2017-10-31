@@ -1,3 +1,11 @@
+"""Provides a class to store user information
+Attributes are connected to Topics and compared in the inference engine
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
+
 class User:
     def __init__(self, first_name="", last_name="", answers=[], attributes={}, phone=[]):
         self.first_name = first_name

@@ -1,9 +1,17 @@
+"""A class to store questions.
+Each question has content, set a possible answers, and topic.
+Topics are used to link questions to rules and further to user attributes
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
+
 class Question:
-    def __init__(self, question=None, topic=None, possible_answers=None, user_answer=None):
+    def __init__(self, question=None, topic=None, possible_answers=None):
         self.question = question
         self.topic = topic
         self.possible_answers = possible_answers
-        self.user_answer = user_answer
 
     def set_question(self, question):
         self.question = question
@@ -26,5 +34,3 @@ class Question:
     def get_possible_answers(self):
         return self.possible_answers
 
-    def get_user_answer(self):
-        return self.user_answer

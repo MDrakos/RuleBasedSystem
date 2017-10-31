@@ -1,3 +1,13 @@
+"""An object to store information about phones.
+Attributes read from a json file of a specific format.
+Attributes are stored as a dictionary, getters all use dictionary
+retrieval methods.
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
+
 class Phone:
     def __init__(self, attributes={}):
         self.attributes = attributes

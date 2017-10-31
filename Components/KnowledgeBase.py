@@ -1,4 +1,5 @@
 """Provides an object to store rules
+Used by the working memory
 """
 
 __author__ = 'Mike'
