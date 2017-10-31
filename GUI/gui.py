@@ -39,7 +39,10 @@ class App:
                 print(answer)
                 #print(is_checked.get())
 
-    def cb(self, event):
+        submit_button = Button(None, text='Submit')
+        submit_button.pack()
+
+    def cb(self):
         print ("variable is", self.var.get())
 
 root = Tk()
