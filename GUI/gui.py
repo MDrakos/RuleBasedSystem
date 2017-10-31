@@ -16,10 +16,14 @@ class App:
         frame.pack()
 
         rules = FileIO.load_rules('JSON/test_rules.json')
+        phones = FileIO.load_phones('JSON/phones.json')
         questions = FileIO.load_questions('JSON/test_questions.json')
+
         FileIO.load_rules('JSON/test_rules.json')
         FileIO.load_phones('JSON/phones.json')
         FileIO.load_questions('JSON/test_questions.json')
+
+
 
         user = User("Mike", "Drakos")
 
@@ -29,11 +33,14 @@ class App:
             w.pack()
 
             for answer in question.get_possible_answers():
-
-                is_checked = IntVar()
-                check = Checkbutton(master, text=answer, variable=is_checked)
+                self.var = IntVar()
+                check = Checkbutton(master, text=answer, variable=self.var,command=self.cb)
                 check.pack()
-                print(is_checked.get())
+                print(answer)
+                #print(is_checked.get())
+
+    def cb(self, event):
+        print ("variable is", self.var.get())
 
 root = Tk()
 app = App(root)
