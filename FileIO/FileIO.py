@@ -1,8 +1,10 @@
 import json
 
 from Components.Rule import Rule
+from Components.ComplexRule import ComplexRule
 from Components.Question import Question
 from Components.Phone import Phone
+from Components.KnowledgeBase import KnowledgeBase
 
 
 def load_rules(filepath):
@@ -10,14 +12,19 @@ def load_rules(filepath):
     with open(filepath) as json_data:
         data = json.load(json_data)
         for rule in data:
-            add = Rule(rule['antecedent'], rule['consequent'], rule['topic'])
-            rules.append(add)
+            if isinstance(rule['antecedent'], dict):
+                add = ComplexRule(rule['antecedent'], rule['consequent'], rule['topic'])
+                rules.append(add)
+            else:
+                add = Rule(rule['antecedent'], rule['consequent'], rule['topic'])
+                rules.append(add)
 
-    return rules
     # kb = KnowledgeBase(rules)
     #
     # for rul in kb.get_rules():
     #     print(rul.get_antecedent(), rul.get_consequent())
+
+    return rules
 
 
 def load_phones(filepath):
@@ -32,6 +39,8 @@ def load_phones(filepath):
                 # print(attribute, phone.get(attribute))
             phones.append(Phone(attributes))
             attributes = {}
+
+    return phones
 
     # print(phones[0].get_attributes())
 

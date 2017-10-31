@@ -20,9 +20,13 @@ class InferenceEngine:
                 if answer.get_topic() == rule.get_topic():
                     if answer.get_content() in rule.get_antecedent():
                         consequents.append(rule.consequent)
+                        user.add_attribute(rule.get_topic(), rule.get_antecedent())
 
         for rule in rules:
-            if consequents == rule.get_antecedent():
-                consequents = [rule.get_consequent()]
+            if isinstance(rule.get_antecedent(), dict):
+                for antecedents in rule.get_antecedent():
+                    for attributes in user.get_attributes():
+                        if antecedents == attributes:
+                            user.set_phone(rule.get_consequent())
 
-        print(consequents)
+        print(user.get_phone())

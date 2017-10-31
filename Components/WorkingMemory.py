@@ -1,11 +1,8 @@
-from Components.Phone import Phone
-
-
 class WorkingMemory:
-    def __init__(self, user, rules, phone=Phone()):
+    def __init__(self, user, rules=[], phones=[]):
         self.user = user
         self.rules = rules
-        self.phone = phone
+        self.phones = phones
 
     def set_user(self, user):
         self.user = user
@@ -13,8 +10,8 @@ class WorkingMemory:
     def set_rules(self, rules):
         self.rules = rules
 
-    def set_phone(self, phone):
-        self.phone = phone
+    def set_phones(self, phones):
+        self.phones = phones
 
     def add_rules(self, rule):
         self.rules.append(rule)
@@ -25,8 +22,8 @@ class WorkingMemory:
     def get_rules(self):
         return self.rules
 
-    def get_phone(self):
-        return self.phone
+    def get_phones(self):
+        return self.phones
 
     def __str__(self):
         return print(self.user)

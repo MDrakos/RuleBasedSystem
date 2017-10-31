@@ -15,8 +15,11 @@
     "consequent" : "expensive"
   },
   {
-    "antecedent" : ["Samsung", "expensive"],
-    "topic"      : "",
+    "antecedent" : {
+      "brand" : "Apple",
+      "price" : "Expensive"
+    },
+    "topic"      : "phone",
     "consequent" : "Samsung Galaxy Note 8"
   }
 ]
