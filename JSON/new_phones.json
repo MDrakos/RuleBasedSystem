@@ -2,46 +2,43 @@
     {
         "model": "Samsung Galaxy Note 8",
         "cpu": "Snapdragon 835 Exynos 8895",
-        "cpuSpecifications": "Octa-core, 2.35 GHz",
+        "cpuSpecifications": "Octa-core 2.35 GHz",
         "gpu": "Adreno 540 ARM Mali-G71 MP20",
         "storageCapacity": "64/128/256 GB",
         "removableStorage": "256GB microSDXC",
         "ram": "6 GB",
         "os": "Android 7.1.1 Nougat",
-        "dimensions": "162.5 x 74.8 x 8.6 mm",
-        "weight": "195 g",
+        "weight": "195g",
         "battery": "3300 mAh Li-Ion, non-removable battery",
-        "display": "6.3, 2960x1440",
+        "display": 6.3,
         "camera": "Dual 12 MP (rear camera), 8 MP (front camera)"
     },
     {
         "model": "Pixel 2 XL",
         "cpu": "Snapdragon 835",
-        "cpuSpecifications": "Octa-core, 2.45 GHz",
+        "cpuSpecifications": "Octa-core 2.45 GHz",
         "gpu": "Adreno 540",
         "storageCapacity": "64 GB or 128 GB",
         "removableStorage": "None",
         "ram": "4 GB LPDDR4X",
         "os": "Android 8.0 Oreo",
-        "dimensions": "157.9 x 76.7 x 7.9 mm",
-        "weight": "175 g",
+        "weight": "175g",
         "battery": "3,520 mAh",
-        "display": "6, 2880 × 1440",
+        "display": 6,
         "camera": "12.2 MP (rear camera), 8 MP (front camera)"
     },
     {
         "model": "Pixel 2",
         "cpu": "Snapdragon 835",
-        "cpuSpecifications": "Octa-core, 2.45 GHz",
+        "cpuSpecifications": "Octa-core 2.45 GHz",
         "gpu": "Adreno 540",
         "storageCapacity": "64 GB or 128 GB",
         "removableStorage": "None",
         "ram": "4 GB LPDDR4X",
         "os": "Android 8.0 Oreo",
-        "dimensions": "145.7 x 69.7 x 7.8 mm",
-        "weight": "143 g",
+        "weight": "143g",
         "battery": "2,700 mAh",
-        "display": "5, 1920 × 1080",
+        "display": 5,
         "camera": "12.2 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -53,10 +50,9 @@
         "removableStorage": "2000 GB (2TB max.) microSDXC",
         "ram": "4 GB LPDDR4 RAM",
         "os": "Android 7.0 Nougat",
-        "dimensions": "148.9 x 71.9 x 7.9 mm",
-        "weight": "162 g",
+        "weight": "162g",
         "battery": "3300 mAh Li-Po, non removable battery",
-        "display": "5.7, 2880×1440",
+        "display": 5.7,
         "camera": "Dual 13 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -68,10 +64,9 @@
         "removableStorage": "2000 GB (2TB max.) microSDXC",
         "ram": "3 GB LPDDR3",
         "os": "Android 7.1.1 Nougat",
-        "dimensions": "149.3 x 72.5 x 9.4 mm",
-        "weight": "180 g",
+        "weight": "180g",
         "battery": "3505 mAh Li-Ion non-removable battery",
-        "display": "4.5, 1620×1080",
+        "display": 4.5,
         "camera": "12 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -83,25 +78,23 @@
         "removableStorage": "Up to 256GB",
         "ram": "4 GB",
         "os": "Android 7.1 Nougat",
-        "dimensions": "156 x 77 x 7.9 mm",
-        "weight": "195 g",
+        "weight": "195g",
         "battery": "3230 mAh Li-ion non-removable battery",
-        "display": "5.46, 3840×2160",
+        "display": 5.46,
         "camera": "19 MP (rear camera), 13 MP (front camera)"
     },
     {
         "model": "Samsung Galaxy S8",
-        "cpu": "Snapdragon 835 Exynos 8895[1]",
+        "cpu": "Snapdragon 835 Exynos 8895",
         "cpuSpecifications": "Octa-core, 2.35 GHz",
         "gpu": "Adreno 540 ARM Mali-G71 MP20",
         "storageCapacity": "64GB",
         "removableStorage": "256GB microSDXC",
         "ram": "4 GB",
         "os": "Android 7.0 Nougat",
-        "dimensions": "148.9 x 68.1 x 8.0 mm",
         "weight": "152g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.8, 2960×1440",
+        "display": 5.8,
         "camera": "12 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -113,10 +106,9 @@
         "removableStorage": "None",
         "ram": "6/8 GB LPDDR4X",
         "os": "Android 7.1 Nougat",
-        "dimensions": "154.2 × 74.1 × 7.3 mm",
         "weight": "153g",
         "battery": "3400 mAh Li-Ion non-removable battery",
-        "display": "5.5, 1920x1080",
+        "display": 5.5,
         "camera": "Dual 16 MP + 20 MP (rear camera), 16 MP (front camera)"
     },
     {
@@ -128,10 +120,9 @@
         "removableStorage": "Up to 256GB",
         "ram": "2/3/4 GB",
         "os": "Android 7.0 Nougat",
-        "dimensions": "150.2 x 74 x 7.7 mm",
         "weight": "155g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.2, 1920x1080",
+        "display": 5.2,
         "camera": "12 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -143,10 +134,9 @@
         "removableStorage": "Up to 200GB",
         "ram": "4 GB",
         "os": "Android 7.1 Nougat",
-        "dimensions": "155.8 x 76 x 6.1 mm",
         "weight": "143g",
         "battery": "2730 mAh Li-Ion non-removable battery",
-        "display": "5.5, 2560x1440",
+        "display": 5.5,
         "camera": "Dual 12 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -158,10 +148,9 @@
         "removableStorage": "no external memory slot",
         "ram": "2 GB LPDDR4X",
         "os": "iOS 11",
-        "dimensions": "138.4 x 67.3 x 7.3 mm",
         "weight": "148g",
         "battery": "1821 mAh Li-Po non-removable battery",
-        "display": "4.7, 1334x750",
+        "display": 4.7,
         "camera": "12 MP (rear camera), 7 MP (front camera)"
     },
     {
@@ -173,10 +162,9 @@
         "removableStorage": "no external memory slot",
         "ram": "3 GB LPDDR4X",
         "os": "iOS 11",
-        "dimensions": "158.4 x 78.1 x 7.5 mm",
         "weight": "202g",
         "battery": "2675 mAh Li-Po non-removable battery",
-        "display": "5.5, 1920x1080",
+        "display": 5.5,
         "camera": "12 MP (rear camera), 7 MP (front camera)"
     },
     {
@@ -188,10 +176,9 @@
         "removableStorage": "no external memory slot",
         "ram": "3 GB LPDDR4X",
         "os": "iOS 11",
-        "dimensions": "143.6 x 70.9 x 7.7 mm",
         "weight": "174g",
         "battery": "2716 mAh Li-Po non-removable battery",
-        "display": "5.8, 2436x1125",
+        "display": 5.8,
         "camera": "12 MP (rear camera), 7 MP (front camera)"
     },
     {
@@ -203,10 +190,9 @@
         "removableStorage": "None",
         "ram": "6 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "152.7 x 74.7 x 7.35 mm",
-        "weight": "158 g",
+        "weight": "158g",
         "battery": "3400 mAh Li-Ion non-removable battery",
-        "display": "5.5, 1920 x 1080",
+        "display": 5.5,
         "camera": "16 MP (rear camera), 16 MP (front camera)"
     },
     {
@@ -218,10 +204,9 @@
         "removableStorage": "2000 GB (2TB max) MicroSD",
         "ram": "4 GB LPDDR4",
         "os": "Android 7.0 Nougat",
-        "dimensions": "159.7 x 78.1 x 7.6 mm",
-        "weight": "174 g (6.14 oz)",
+        "weight": "174g",
         "battery": "3250 mAh Li-Ion removable battery",
-        "display": "5.7, 2560 x 1440",
+        "display": 5.7,
         "camera": "Dual 16 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -233,10 +218,9 @@
         "removableStorage": "2000 GB (2TB max) MicroSD",
         "ram": "4 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "153.5 mm x 75.3 mm x 5.19 mm",
-        "weight": "136g (4.8 oz)",
+        "weight": "136g",
         "battery": "2600 mAh Li-Ion non-removable battery",
-        "display": "5.5, 2560 x 1440",
+        "display": 5.5,
         "camera": "13 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -248,10 +232,9 @@
         "removableStorage": "no external memory slot",
         "ram": "4 GB LPDDR4",
         "os": "Android 7.0 Nougat",
-        "dimensions": "154.7 mm x 75.7 mm x 8.5 mm",
-        "weight": "168g (5.9 oz)",
+        "weight": "168g",
         "battery": "3450 mAh Li-Ion non-removable battery",
-        "display": "5.5\" 2560 x 1440",
+        "display": 5.5,
         "camera": "12.3 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -263,10 +246,9 @@
         "removableStorage": "no external memory slot",
         "ram": "4 GB LPDDR4",
         "os": "Android 7.0 Nougat",
-        "dimensions": "154.7 mm x 75.7 mm x 8.5 mm",
-        "weight": "143g (5.04 oz)",
+        "weight": "143g",
         "battery": "2770 mAh Li-Ion non-removable battery",
-        "display": "5.0, 1920x1080",
+        "display": 5,
         "camera": "12.3 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -278,25 +260,23 @@
         "removableStorage": "2000 GB (2TB max.) microSDXC",
         "ram": "4 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "142.4 x 69.6 x 7.9 mm",
-        "weight": "152 g (5.4 oz)",
+        "weight": "152g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.1, 2560 x 1440",
+        "display": 5.1,
         "camera": "12 MP (rear camera), 5 MP (front camera)"
     },
     {
         "model": "Samsung Galaxy S7 Edge",
         "cpu": "Snapdragon 820 (Qualcomm Snapdragon) Exynos 8 Octa 8890 (Exynos)",
-        "cpuSpecifications": "Dual-core 2.15 GHz Kryo & Dual-core 1.6 GHz Kryo (Qualcomm Snapdragon) \n\nQuad-core 2.6 GHz Exynos M1 & Quad-core 2.3 GHz Cortex A53 (Exynos)",
+        "cpuSpecifications": "Dual-core 2.15 GHz Kryo & Dual-core 1.6 GHz Kryo (Qualcomm Snapdragon) Quad-core 2.6 GHz Exynos M1 & Quad-core 2.3 GHz Cortex A53 (Exynos)",
         "gpu": "Adreno 530 (Qualcomm Snapdragon) Mali-T880 MP12 (Exynos)",
         "storageCapacity": "128 GB, 64 GB, 32 GB",
         "removableStorage": "2000 GB (2TB max.) microSDXC",
         "ram": "4 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "150.9 x 72.6 x 7.7 mm",
-        "weight": "157 g (5.5 oz)",
+        "weight": "157g",
         "battery": "3600 mAh Li-Ion non-removable battery",
-        "display": "5.5, 2560 x 1440",
+        "display": 5.5,
         "camera": "12 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -308,10 +288,9 @@
         "removableStorage": "2,000 GB (2TB; max.) microSD",
         "ram": "4 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "145.9 x 71.9 x 9 mm",
-        "weight": "160 g (5.7 oz)",
+        "weight": "160g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.2, 2560 x 1440",
+        "display": 5.2,
         "camera": "12 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -323,10 +302,9 @@
         "removableStorage": "2,000 GB (2TB; max.) microSDXC",
         "ram": "4 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "149.4 x 73.9 x 7.7 mm",
-        "weight": "159 g (5.61 oz)",
+        "weight": "159g",
         "battery": "2800 mAh Li-Ion removable battery",
-        "display": "5.3, 2560 x 1440",
+        "display": 5.3,
         "camera": "Dual 16 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -338,10 +316,9 @@
         "removableStorage": "2,000 GB (2TB; max.) microSDXC",
         "ram": "3 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "143.7 x 70.4 x 8.7 mm",
-        "weight": "164.4 g",
+        "weight": "164.4g",
         "battery": "2700 mAh Li-Ion Non-removable Battery",
-        "display": "5, 1980 x 1080",
+        "display": 5,
         "camera": "23 MP (rear camera), 13 MP (front camera"
     },
     {
@@ -353,10 +330,9 @@
         "removableStorage": "128GB (max.) microSD",
         "ram": "3 GB",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "145 x 70.9 x 7 mm",
-        "weight": "144 g",
+        "weight": "144g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.2, 1920 x 1080",
+        "display": 5.2,
         "camera": "12 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -368,10 +344,9 @@
         "removableStorage": "2,000 GB (2TB; max.) microSDXC",
         "ram": "3 GB LPDDR3",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "147 x 72.5 x 7.4 mm",
-        "weight": "135 g",
+        "weight": "135g",
         "battery": "2610 mAh Li-Ion non-removable battery",
-        "display": "5.2, 1920 x 1080",
+        "display": 5.2,
         "camera": "13 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -383,10 +358,9 @@
         "removableStorage": "2,000 GB (2TB; max.) microSDXC",
         "ram": "3 GB LPDDR3",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "146 x 72 x 8.1 mm",
-        "weight": "161 g",
+        "weight": "161g",
         "battery": "2900 mAh Li-Ion non-removable battery",
-        "display": "5.2, 1920 x 1080",
+        "display": 5.2,
         "camera": "23 MP (rear camera), 13 MP (front camera)"
     },
     {
@@ -398,10 +372,9 @@
         "removableStorage": "no external memory slot",
         "ram": "6 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "152.7 x 74.7 x 7.35 mm",
-        "weight": "158 g",
+        "weight": "158g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.5, 1920 x 1080",
+        "display": 5.5,
         "camera": "16 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -413,10 +386,9 @@
         "removableStorage": "no external memory slot",
         "ram": "2 GB LPDDR4",
         "os": "iOS 10",
-        "dimensions": "138.3 x 67.1 x 7.1 mm",
-        "weight": "138 g (4.9 oz)",
+        "weight": "138g",
         "battery": "1960 mAH Li-Po non-removable battery",
-        "display": "4.7, 1334 x 750",
+        "display": 4.7,
         "camera": "12 MP (rear camera), 7 MP (front camera)"
     },
     {
@@ -428,10 +400,9 @@
         "removableStorage": "no external memory slot",
         "ram": "3 GB LPDDR4",
         "os": "iOS 10",
-        "dimensions": "158.2 x 77.9 x 7.3 mm",
-        "weight": "188 g (6.6 oz)",
+        "weight": "188g",
         "battery": "2900 mAH Li-Po non-removable battery",
-        "display": "5.5, 1920 x 1080",
+        "display": 5.5,
         "camera": "12 MP (rear camera), 7 MP (front camera)"
     },
     {
@@ -443,10 +414,9 @@
         "removableStorage": "2,000 GB (2TB; max.) microSDXC",
         "ram": "4 GB LPDDR3",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "153.9 x 75.4 x 6.99 mm",
-        "weight": "165 g",
+        "weight": "165g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.5, 2560 x 1440",
+        "display": 5.5,
         "camera": "21 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -458,23 +428,10 @@
         "removableStorage": "256GB (max.) microSD",
         "ram": "3 GB or 4 GB",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "152.6 x 77.4 x 7.7 mm",
-        "weight": "155 g",
+        "weight": "155g",
         "battery": "3000 mAh Li-Ion non-removable battery",
-        "display": "5.5, 1920 x 1080",
+        "display": 5.5,
         "camera": "16 MP (rear camera), 8 MP (front camera)"
-    },
-    {
-        "model": "Microsoft Lumia 650",
-        "cpu": "Snapdragon 212",
-        "storageCapacity": "16 GB",
-        "removableStorage": "microSD",
-        "ram": "1 GB",
-        "os": "Windows 10 Mobile",
-        "weight": "122 g",
-        "battery": "2000 mAH Li-Ion removable battery",
-        "display": "5, 1280x720",
-        "camera": "8 MP (rear camera), 5 MP (front camera)"
     },
     {
         "model": "Microsoft Lumia 950",
@@ -485,10 +442,9 @@
         "removableStorage": "microSD up to 200 GB",
         "ram": "3 GB LPDDR3",
         "os": "Windows 10 Mobile",
-        "dimensions": "145 x 73.2 x 8.5 mm",
-        "weight": "150 g (5.29 oz)",
+        "weight": "150g",
         "battery": "3000 mAh Li-Ion removable battery",
-        "display": "5.2, 2560 x 1440",
+        "display": 5.2,
         "camera": "20 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -500,10 +456,9 @@
         "removableStorage": "microSD up to 200 GB",
         "ram": "3 GB LPDDR4",
         "os": "Windows 10 Mobile",
-        "dimensions": "151.9 x 78.4 x 8.1 mm",
-        "weight": "165 g (5.82 oz)",
+        "weight": "165g",
         "battery": "3340 mAh Li-Ion removable battery",
-        "display": "5.7, 2560 x 1440",
+        "display": 5.7,
         "camera": "20 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -515,10 +470,9 @@
         "removableStorage": "microSDXC up to 2 TB",
         "ram": "3 GB LPDDR4",
         "os": "Android 5.0 Lollipop, upgradable to v6.0.1 Android Marshmallow",
-        "dimensions": "144.6 x 69.7 x 9.6 mm",
-        "weight": "157 g (5.54 oz)",
+        "weight": "157g",
         "battery": "2840 mAh Li-Po battery",
-        "display": "5.0, 1920 x 1080",
+        "display": 5,
         "camera": "20.7 MP (rear camera), 4 MP UltraPixel (front camera)"
     },
     {
@@ -530,10 +484,9 @@
         "removableStorage": "microSD, up to 200 GB",
         "ram": "4 GB",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "159.6 x 79.3 x 8.6 mm",
-        "weight": "192 g",
+        "weight": "192g",
         "battery": "3000 mAh Li-Ion Removable Battery",
-        "display": "5.7, 2560 x 1440",
+        "display": 5.7,
         "camera": "16 MP (rear camera), 5 MP Duo (front camera)"
     },
     {
@@ -545,14 +498,13 @@
         "removableStorage": "no external memory slot",
         "ram": "3 GB LPDDR4",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "159.3 x 77.8 x 7.3 mm",
         "weight": "178g",
         "battery": "3450 mAh Li-Po non-removable battery",
-        "display": "5.7, 2560 x 1440",
+        "display": 5.7,
         "camera": "12.3MP (rear camera) 8MP (front camera)"
     },
     {
-        "model": "Nexus 5X[3]",
+        "model": "Nexus 5X",
         "cpu": "Snapdragon 808",
         "cpuSpecifications": "Dual-core 1.82 GHz Cortex-A57 & Quad-core 1.44 GHz Cortex-A53",
         "gpu": "Adreno 418",
@@ -560,10 +512,9 @@
         "removableStorage": "no external memory slot",
         "ram": "2 GB LPDDR3",
         "os": "Android 6.0 Marshmallow",
-        "dimensions": "147 x 72.6 x 7.9 mm",
         "weight": "136g",
         "battery": "2700 mAh Li-Po non-removable battery",
-        "display": "5.2, 1920 x 1080",
+        "display": 5.2,
         "camera": "12.3MP (rear camera), 5MP (front camera)"
     },
     {
@@ -572,13 +523,12 @@
         "cpuSpecifications": "Dual-core 1.82 GHz Cortex-A57 & Quad-core 1.44 GHz Cortex-A53",
         "gpu": "Adreno 418",
         "storageCapacity": "32 GB",
-        "removableStorage": "• Hot-swappable MicroSD slot (up to 2TB)",
+        "removableStorage": "MicroSD slot up to 2TB",
         "ram": "3 GB LPDDR3",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "147 (184 opened) x 77.2 x 9.4 mm",
         "weight": "192g",
         "battery": "3410 mAh Li-Po non-removable battery",
-        "display": "Curved 5.43, 2560 x 1440",
+        "display": 5.43,
         "camera": "18MP (rear camera), 2MP (front camera)"
     },
     {
@@ -590,10 +540,9 @@
         "removableStorage": "microSD up to 128 GB",
         "ram": "3 GB LPDDR4",
         "os": "Android 5.0 Lollipop, planned upgrade to v6.0 (Marshmallow)",
-        "dimensions": "146 x 72 x 6.9 mm",
-        "weight": "144 g (5.08 oz)",
+        "weight": "144g",
         "battery": "2930 mAh Li-Po non-removable battery",
-        "display": "5.2, 1920x1080",
+        "display": 5.2,
         "camera": "20.7 MP (rear camera), 5.1 MP (front camera)"
     },
     {
@@ -605,10 +554,9 @@
         "removableStorage": "microSD up to 128 GB",
         "ram": "2 GB LPDDR3",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "148 x 75 x 10.9 mm",
-        "weight": "169 g (5.96 oz)",
+        "weight": "169g",
         "battery": "3630 mAh Li-Po non-removable battery",
-        "display": "5.5, 1920x1080",
+        "display": 5.5,
         "camera": "21 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -620,14 +568,13 @@
         "removableStorage": "None",
         "ram": "3 GB LPDDR4",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "153 x 76.2 x 11.1 mm",
-        "weight": "179 g (6.31 oz)",
+        "weight": "179g",
         "battery": "3000 mAh Li-Po non-removable battery",
-        "display": "5.7, 2560 x 1440",
+        "display": 5.7,
         "camera": "21 MP (rear camera), 5 MP (front camera)"
     },
     {
-        "model": "LG G4[5]",
+        "model": "LG G4",
         "cpu": "Snapdragon 808",
         "cpuSpecifications": "Dual-core 1.82 GHz Cortex-A57 & Quad-core 1.44 GHz Cortex-A53",
         "gpu": "Adreno 418",
@@ -635,10 +582,9 @@
         "removableStorage": "microSDXC up to 2 TB",
         "ram": "3 GB LPDDR3",
         "os": "Android 5.1 Lollipop",
-        "dimensions": "148.9 x 76.1 x 6.3 - 9.8 mm",
-        "weight": "155 g (5.47 oz)",
+        "weight": "155g",
         "battery": "3000 mAh Li-Po removable battery",
-        "display": "5.5, 2560 x 1440",
+        "display": 5.5,
         "camera": "16 MP (rear camera), 8 MP (front camera)"
     },
     {
@@ -650,10 +596,9 @@
         "removableStorage": "no external memory slot",
         "ram": "3 or 4 GB LPDDR4",
         "os": "Android 5.1.1 Lollipop, upgradable to v6.0.1 Android Marshmallow",
-        "dimensions": "151.8 x 74.9 x 9.85 mm",
-        "weight": "175 g (6.2 oz)",
+        "weight": "175g",
         "battery": "3300 mAh Li-Po non-removable battery",
-        "display": "5.5, 1920x1080",
+        "display": 5.5,
         "camera": "13 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -665,10 +610,9 @@
         "removableStorage": "no external memory slot",
         "ram": "2 GB LPDDR4",
         "os": "iOS 9, upgradeable to iOS 10",
-        "dimensions": "138.3 x 67.1 x 7.1 mm",
-        "weight": "143 g (5.04 oz)",
+        "weight": "143g",
         "battery": "1715 mAh Li-Po non-removable battery",
-        "display": "4.7, 1334x750",
+        "display": 4.7,
         "camera": "12 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -680,10 +624,9 @@
         "removableStorage": "no external memory slot",
         "ram": "2 GB LPDDR4",
         "os": "iOS 9, upgradeable to iOS 10",
-        "dimensions": "158.2 x 77.9 x 7.3 mm",
-        "weight": "192g (6.77 oz)",
+        "weight": "192g",
         "battery": "2915 mAh Li-Po non-removable battery",
-        "display": "5.5, 1920x1080",
+        "display": 5.5,
         "camera": "12 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -695,10 +638,9 @@
         "removableStorage": "no external memory slot",
         "ram": "3 GB LPDDR4",
         "os": "Android 5.0.2 Lollipop",
-        "dimensions": "143.4 x 70.5 x 6.8 mm",
-        "weight": "138 g (4.9 oz)",
+        "weight": "138g",
         "battery": "2550 mAh Li-Po non-removable battery",
-        "display": "5.1, 2560x1440",
+        "display": 5.1,
         "camera": "16 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -710,10 +652,9 @@
         "removableStorage": "no external memory slot",
         "ram": "3 GB LPDDR4",
         "os": "Android 5.0.2 Lollipop",
-        "dimensions": "142 x 70.1 x 7 mm",
-        "weight": "132 g (4.7 oz)",
+        "weight": "132g",
         "battery": "2600 mAh Li-Po non-removable battery",
-        "display": "5.1, 2560x1440",
+        "display": 5.1,
         "camera": "16 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -725,10 +666,9 @@
         "removableStorage": "no external memory slot",
         "ram": "4 GB LPDDR4",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "154.4 x 75.8 x 6.9 mm",
-        "weight": "153 g (5.4 oz)",
+        "weight": "153g",
         "battery": "3000 mAh Li-Po non-removable battery",
-        "display": "5.7, 2560x1440",
+        "display": 5.7,
         "camera": "16 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -740,10 +680,9 @@
         "removableStorage": "no external memory slot",
         "ram": "4 GB LPDDR4",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "153.2 x 76.1 x 7.6 mm",
-        "weight": "171 g (6.0 oz)",
+        "weight": "171g",
         "battery": "3020 mAh Li-Po non-removable battery",
-        "display": "5.7, 2560x1440",
+        "display": 5.7,
         "camera": "16 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -755,10 +694,9 @@
         "removableStorage": "Up to 200 GB microSDXC",
         "ram": "3 GB LPDDR4",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "146 x 72 x 7.3 mm",
-        "weight": "154 g (5.4 oz)",
+        "weight": "154g",
         "battery": "2900 mAh Li-Po non-removable battery",
-        "display": "5.2, 1920x1080",
+        "display": 5.2,
         "camera": "23 MP (rear camera), 5 MP (front camera)"
     },
     {
@@ -770,10 +708,9 @@
         "removableStorage": "Up to 200 GB microSDXC",
         "ram": "3 GB LPDDR4",
         "os": "Android 5.1.1 Lollipop",
-        "dimensions": "154.4 x 75.8 x 7.8 mm",
-        "weight": "180 g (5.4 oz)",
+        "weight": "180g",
         "battery": "3430 mAh Li-Po non-removable battery",
-        "display": "5.5, 3840x2160",
+        "display": 5.5,
         "camera": "23 MP (rear camera), 5 MP (front camera)"
     }
 ]
