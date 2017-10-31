@@ -1,9 +1,6 @@
 class Phone:
-    def __init__(self, attributes=None):
-        if attributes is None:
-            attributes = {}
-        else:
-            self.attributes = attributes
+    def __init__(self, attributes={}):
+        self.attributes = attributes
 
     def set_attributes(self, attributes):
         self.attributes = attributes
@@ -35,8 +32,8 @@ class Phone:
     def get_os(self):
         return self.attributes['os']
 
-    def get_custom_lanucher(self):
-        return self.attributes['customLlauncher']
+    def get_custom_launcher(self):
+        return self.attributes['customLauncher']
 
     def get_dimensions(self):
         return self.attributes['dimensions']

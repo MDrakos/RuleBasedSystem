@@ -4,6 +4,7 @@ from Components.User import User
 from Components.Answer import Answer
 from Components.WorkingMemory import WorkingMemory
 from Components.InferenceEngine import InferenceEngine
+from Components.KnowledgeBase import KnowledgeBase
 
 
 def test_file_io():
@@ -15,14 +16,18 @@ def test_file_io():
 
 
 def test_process():
-    # create blank user and workingMemory
+    # create blank user, working memory, and knowledge base
     user = User()
     wm = WorkingMemory()
+    kb = KnowledgeBase()
 
     # Import rules, phones, and questions
     rules = FileIO.load_rules('JSON/test_rules.json')
-    phones = FileIO.load_phones('JSON/phones.json')
+    phones = FileIO.load_phones('JSON/new_phones.json')
     questions = FileIO.load_questions('JSON/test_questions.json')
+
+    # Store rules in Knowledge Base
+    kb.set_rules(rules)
 
     # set known user values so far
     user.set_user_first_name("Mike")
@@ -30,7 +35,7 @@ def test_process():
 
     # set known components for working memory
     wm.set_user(user)
-    wm.set_rules(rules)
+    wm.set_rules(kb.get_rules())
     wm.set_phones(phones)
     wm.set_questions(questions)
 
@@ -49,7 +54,8 @@ def test_process():
     infer.infer()
 
     # print answer
-    print(wm.get_user().get_phone())
+    print(wm.get_user().get_phone().get_model())
+    print(wm.get_user().get_phone().get_cpu())
 
     # user.set_answer("Samsung")
     # user.set_answer(">1000")

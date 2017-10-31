@@ -1,3 +1,10 @@
+"""Provides an object to store rules
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
+
 class KnowledgeBase:
     rules = []
 

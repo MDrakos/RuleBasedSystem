@@ -1,5 +1,6 @@
 from Components.User import User
 
+
 class WorkingMemory:
     def __init__(self, user=User(), rules=[], phones=[], questions=[]):
         self.user = user
