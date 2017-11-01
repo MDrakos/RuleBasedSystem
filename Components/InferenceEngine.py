@@ -39,3 +39,4 @@ class InferenceEngine:
                     for phone in phones:
                         if rule.get_consequent() in phone.get_model():
                             user.set_phone(phone)
+                            print("test")

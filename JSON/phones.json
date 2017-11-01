@@ -1,6 +1,7 @@
 [
   {
     "model"             : "Samsung Galaxy Note 8",
+    "brand"             : "Samsung",
     "cpu"               : "Snapdragon 835 Exynos 8895",
     "cpuSpecifications" : "Octa-core, 2.35 GHz",
     "gpu"               : "Adreno 540 ARM Mali-G71 MP20",
@@ -12,12 +13,13 @@
     "dimensions"        : "162.5 x 74.8 x 8.6 mm",
     "weight"            : "195 g",
     "battery"           : "3300 mAh Li-Ion, non-removable battery",
-    "display"           : "6.3, 2960x1440",
+    "display"           : 6.3,
     "camera"            : "Dual 12 MP (rear camera), 8 MP (front camera)",
     "price"             : "expensive"
   },
   {
     "model"             : "Pixel 2 XL",
+    "brand"             : "Google",
     "cpu"               : "Snapdragon 835",
     "cpuSpecifications" : "Octa-core, 2.45 GHz",
     "gpu"               : "Adreno 540",
@@ -28,12 +30,13 @@
     "dimensions"        : "157.9 x 76.7 x 7.9 mm",
     "weight"            : "175 g",
     "battery"           : "3,520 mAh",
-    "display"           : "6, 2880 x 1440",
+    "display"           : 6,
     "camera"            : "12.2 MP (rear camera), 8 MP (front camera)",
     "price"             : "expensive"
   },
   {
         "model": "Apple iPhone 8 Plus",
+        "brand": "Apple",
         "cpu": "Apple A11 Bionic",
         "cpuSpecifications": "Hexa-core (2x Monsoon + 4x Mistral)",
         "gpu": "Apple GPU (three-core graphics)",
@@ -49,6 +52,7 @@
     },
     {
         "model": "Apple iPhone X",
+        "brand": "Apple",
         "cpu": "Apple A11 Bionic",
         "cpuSpecifications": "Hexa-core (2x Monsoon + 4x Mistral)",
         "gpu": "Apple GPU (three-core graphics)",
