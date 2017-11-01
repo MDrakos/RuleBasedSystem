@@ -4,8 +4,8 @@ from Components.User import User
 from Components.Answer import Answer
 from Components.WorkingMemory import WorkingMemory
 from Components.InferenceEngine import InferenceEngine
-
-
+from GUI import gui
+'''
 def test_file_io():
     FileIO.load_rules('JSON/test_rules.json')
     FileIO.load_phones('JSON/phones.json')
@@ -46,3 +46,9 @@ def test_process():
     # print(user.get_answers())
 
 test_process()
+'''
+
+def main():
+    gui.App
+
+main()
