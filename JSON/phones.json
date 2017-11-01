@@ -31,5 +31,35 @@
     "display"           : "6, 2880 x 1440",
     "camera"            : "12.2 MP (rear camera), 8 MP (front camera)",
     "price"             : "expensive"
-  }
+  },
+  {
+        "model": "Apple iPhone 8 Plus",
+        "cpu": "Apple A11 Bionic",
+        "cpuSpecifications": "Hexa-core (2x Monsoon + 4x Mistral)",
+        "gpu": "Apple GPU (three-core graphics)",
+        "storageCapacity": "64 GB or 256 GB",
+        "removableStorage": "no external memory slot",
+        "ram": "3 GB LPDDR4X",
+        "os": "iOS 11",
+        "weight": "202g",
+        "battery": "2675 mAh Li-Po non-removable battery",
+        "display": 5.5,
+        "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "price" : "expensive"
+    },
+    {
+        "model": "Apple iPhone X",
+        "cpu": "Apple A11 Bionic",
+        "cpuSpecifications": "Hexa-core (2x Monsoon + 4x Mistral)",
+        "gpu": "Apple GPU (three-core graphics)",
+        "storageCapacity": "64 GB or 256 GB",
+        "removableStorage": "no external memory slot",
+        "ram": "3 GB LPDDR4X",
+        "os": "iOS 11",
+        "weight": "174g",
+        "battery": "2716 mAh Li-Po non-removable battery",
+        "display": 5.8,
+        "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "price" : "expensive"
+    }
 ]

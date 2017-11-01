@@ -1,5 +1,14 @@
+"""Provides an object to store each answer a user gives.
+
+Each answer has a topic and content that can be both set and retrieved.
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
+
 class Answer:
-    def __init__(self, topic, content):
+    def __init__(self, topic="", content=""):
         self.topic = topic
         self.content = content
 

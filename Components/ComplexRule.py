@@ -1,3 +1,16 @@
+"""Provides a class to store complex rules.
+
+Complex rules contain a complex antecedent which is a dictionary
+of consequences from previous rules.
+
+Each rule is tied to a topic, so the topics serve as keys in the
+complex_antecedent dict and the consequent is the value.
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
+
 class ComplexRule:
     def __init__(self, complex_antecedent={}, consequent="", topic=""):
         self.complex_antecedent = complex_antecedent

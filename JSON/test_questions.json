@@ -3,7 +3,7 @@
     "question"  : "What is your budget?",
     "topic"     : "price",
     "answer1"   : "<200",
-    "answer2"   : "<500",
+    "answer2"   : "~500",
     "answer3"   : ">1000"
   },
   {

@@ -10,6 +10,11 @@
     "consequent" : "Samsung"
   },
   {
+    "antecedent" : "~500",
+    "topic"      : "price",
+    "consequent" : "medium"
+  },
+  {
     "antecedent" : ">1000",
     "topic"      : "price",
     "consequent" : "expensive"
@@ -17,7 +22,23 @@
   {
     "antecedent" : {
       "brand" : "Apple",
-      "price" : "Expensive"
+      "price" : "expensive"
+    },
+    "topic"      : "phone",
+    "consequent" : "Apple iPhone X"
+  },
+  {
+    "antecedent" : {
+      "brand" : "Apple",
+      "price" : "medium"
+    },
+    "topic"      : "phone",
+    "consequent" : "Apple iPhone 8 Plus"
+  },
+  {
+    "antecedent" : {
+      "brand" : "Samsung",
+      "price" : "expensive"
     },
     "topic"      : "phone",
     "consequent" : "Samsung Galaxy Note 8"
