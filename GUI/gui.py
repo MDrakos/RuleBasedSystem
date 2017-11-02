@@ -13,6 +13,7 @@ class Window:
     def __init__(self, master):
         self.user = User()
         self.wm = WorkingMemory()
+        self.inference_engine = InferenceEngine()
         self.rules = FileIO.load_rules('JSON/test_rules.json')
         self.phones = FileIO.load_phones('JSON/phones.json')
         self.questions = FileIO.load_questions('JSON/test_questions.json')
@@ -71,7 +72,10 @@ class Window:
                 ans = Answer(user_topic, user_answer)
                 user.set_answer(ans)
                 print(user_topic, user_answer)
-        messagebox.showinfo('Result', user.get_answers())
+
+        self.inference_engine.set_working_memory(self.wm)
+        self.inference_engine.infer()
+        messagebox.showinfo('Result', user.get_phone().get_model())
         #print(user.get_answers())
 
 root = Tk()
