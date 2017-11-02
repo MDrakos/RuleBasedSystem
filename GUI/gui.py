@@ -49,33 +49,6 @@ class Window:
 
         self.bbutton = Button(root, text="Display Questions", command=self.display_questions)
         self.bbutton.grid(row=2, column=5)
-        # self.cbutton = Button(root, text="Get GCM", command=self.get_first_gcm)
-        # self.cbutton.grid(row=2, column=2, sticky=W + E)
-        # self.cbutton = Button(root, text="Export GCM", command=self.export_first_gcm)
-        # self.cbutton.grid(row=2, column=3, sticky=W + E)
-        # self.checkbutton = Checkbutton(root, text="Cluster Order", variable=self.first_cluster_order)
-        # self.checkbutton.grid(row=1, column=3, sticky=W + E)
-
-        #
-        # # Second file buttons
-        # self.bbutton = Button(root, text="Browse", command=self.browse_second_csv)
-        # self.bbutton.grid(row=3, column=2)
-        # self.cbutton = Button(root, text="Get Graph", command=self.get_second_graph)
-        # self.cbutton.grid(row=4, column=0, sticky=W + E)
-        # self.cbutton = Button(root, text="Export GDV", command=self.get_first_gdv)
-        # self.cbutton.grid(row=4, column=1, sticky=W + E)
-        # self.cbutton = Button(root, text="Get GCM", command=self.get_second_gcm)
-        # self.cbutton.grid(row=4, column=2, sticky=W + E)
-        # self.checkbutton = Checkbutton(root, text="Cluster Order", variable=self.second_cluster_order)
-        # self.checkbutton.grid(row=3, column=3, sticky=W + E)
-        # self.cbutton = Button(root, text="Export GCM", command=self.export_second_gcm)
-        # self.cbutton.grid(row=4, column=3, sticky=W + E)
-        #
-        # # GCD button
-        # self.cbutton = Button(root, text="Get GCD", command=self.get_gcd)
-        # self.cbutton.grid(row=5, column=1, sticky=W + E)
-        # self.cbutton = Button(root, text="Export GCD", command=self.export_gcd)
-        # self.cbutton.grid(row=5, column=2, sticky=W + E)
 
     def browse_rules_file(self):
         from tkinter.filedialog import askopenfilename
