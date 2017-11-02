@@ -47,6 +47,15 @@ class Window:
         self.bbutton = Button(root, text="Browse", command=self.browse_phones_file)
         self.bbutton.grid(row=3, column=1)
 
+        Label(master, text="Type your First Name").grid(row=4,column=0)
+        Label(master, text="Type your Last Name").grid(row=5,column=0)
+
+        self.e1 = Entry(master)
+        self.e2 = Entry(master)
+
+        self.e1.grid(row=4, column=2)
+        self.e2.grid(row=5, column=2)
+
         self.bbutton = Button(root, text="Display Questions", command=self.display_questions)
         self.bbutton.grid(row=2, column=5)
 
@@ -104,6 +113,8 @@ class Window:
             self.wm.set_phones(self.phones)
 
     def display_questions(self):
+        self.user.set_user_first_name(self.e1.get())
+        self.user.set_user_last_name(self.e2.get())
         window = tk.Toplevel(root)
         window.minsize(width=666, height=666)
         window.maxsize(width=666, height=666)
