@@ -10,6 +10,11 @@
     "consequent" : "Samsung"
   },
   {
+    "antecedent" : "<200",
+    "topic"      : "price",
+    "consequent" : "cheap"
+  },
+  {
     "antecedent" : "~500",
     "topic"      : "price",
     "consequent" : "medium"
@@ -18,6 +23,21 @@
     "antecedent" : ">1000",
     "topic"      : "price",
     "consequent" : "expensive"
+  },
+  {
+    "antecedent" : "Carney (small)",
+    "topic"      : "screen size",
+    "consequent" : 5.5
+  },
+  {
+    "antecedent" : "Normal",
+    "topic"      : "screen size",
+    "consequent" : 5.8
+  },
+  {
+    "antecedent" : "Yeti (large)",
+    "topic"      : "screen size",
+    "consequent" : 6.3
   },
   {
     "antecedent" : {
@@ -39,6 +59,15 @@
     "antecedent" : {
       "brand" : "Samsung",
       "price" : "expensive"
+    },
+    "topic"      : "phone",
+    "consequent" : "Samsung Galaxy Note 8"
+  },
+  {
+    "antecedent" : {
+      "brand" : "Samsung",
+      "price" : "expensive",
+      "screen size" : 6.3
     },
     "topic"      : "phone",
     "consequent" : "Samsung Galaxy Note 8"
