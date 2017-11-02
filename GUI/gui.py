@@ -13,13 +13,16 @@ class Window:
     def __init__(self, master):
         self.user = User()
         self.wm = WorkingMemory()
+        self.kb = KnowledgeBase()
         self.inference_engine = InferenceEngine()
         self.rules = FileIO.load_rules('JSON/test_rules.json')
         self.phones = FileIO.load_phones('JSON/phones.json')
         self.questions = FileIO.load_questions('JSON/test_questions.json')
 
+        self.kb.set_rules(self.rules)
+
         self.wm.set_user(self.user)
-        self.wm.set_rules(self.rules)
+        self.wm.set_rules(self.kb.get_rules())
         self.wm.set_phones(self.phones)
         self.wm.set_questions(self.questions)
 
