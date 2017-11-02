@@ -57,6 +57,17 @@ def test_process():
     print(wm.get_user().get_phone().get_model())
     print(wm.get_user().get_phone().get_cpu())
 
+    # ask if it's right
+    print("Is this the phone you wanted? y or n")
+    correct_phone = input()
+    if correct_phone == 'y':
+        last_fired_rule = infer.get_fired_rules()[-1]
+        last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
+    else:
+        print("What phone do you think is a better choice?")
+        correct_model = input()
+
+
     # user.set_answer("Samsung")
     # user.set_answer(">1000")
     # print(user.get_answers())

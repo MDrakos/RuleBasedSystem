@@ -7,10 +7,11 @@ __version__ = '1.0'
 
 
 class Rule:
-    def __init__(self, antecedent, consequent, topic=""):
+    def __init__(self, antecedent, consequent, topic="", salience=0):
         self.antecedent = antecedent
         self.consequent = consequent
         self.topic = topic
+        self.salience = salience
 
     def set_antecedent(self, antecedent):
         self.antecedent = antecedent
@@ -21,6 +22,9 @@ class Rule:
     def set_topic(self, topic):
         self.topic = topic
 
+    def set_salience(self, salience):
+        self.salience = salience
+
     def get_antecedent(self):
         return self.antecedent
 
@@ -29,3 +33,6 @@ class Rule:
 
     def get_topic(self):
         return self.topic
+
+    def get_salience(self):
+        return self.salience
