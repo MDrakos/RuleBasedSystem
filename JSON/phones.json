@@ -49,8 +49,8 @@
         "display": 5.5,
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price" : "expensive"
-    },
-    {
+  },
+  {
         "model": "Apple iPhone X",
         "brand": "Apple",
         "cpu": "Apple A11 Bionic",
@@ -65,5 +65,53 @@
         "display": 5.8,
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price" : "expensive"
+  },
+  {
+        "model": "Apple iPhone 7",
+        "brand" : "Apple",
+        "cpu": "Apple A10 Fusion",
+        "cpuSpecifications": "Quad core 2.3 GHz ARMv8-A",
+        "gpu": "PowerVR Series7XT Plus (six-core graphics)",
+        "storageCapacity": "256 GB, 128 GB or 32 GB",
+        "removableStorage": "no external memory slot",
+        "ram": "2 GB LPDDR4",
+        "os": "iOS 10",
+        "weight": "138g",
+        "battery": "1960 mAH Li-Po non-removable battery",
+        "display": 4.7,
+        "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "price" : "cheap"
+  },
+  {
+        "model": "Apple iPhone 7 Plus",
+        "brand" : "Apple",
+        "cpu": "Apple A10 Fusion",
+        "cpuSpecifications": "Quad core 2.3 GHz ARMv8-A",
+        "gpu": "PowerVR Series7XT Plus (six-core graphics)",
+        "storageCapacity": "256 GB, 128 GB or 32 GB",
+        "removableStorage": "no external memory slot",
+        "ram": "3 GB LPDDR4",
+        "os": "iOS 10",
+        "weight": "188g",
+        "battery": "2900 mAH Li-Po non-removable battery",
+        "display": 5.5,
+        "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "price" : "medium"
+  },
+  {
+        "model": "OnePlus 3T",
+        "brand" : "OnePlus",
+        "cpu": "Snapdragon 821",
+        "cpuSpecifications": "Dual-core 2.35 GHz & Dual-core 1.6 GHz Kryo",
+        "gpu": "Adreno 530",
+        "storageCapacity": "128 GB, 64 GB",
+        "removableStorage": "None",
+        "ram": "6 GB LPDDR4",
+        "os": "Android 6.0 Marshmallow",
+        "weight": "158g",
+        "battery": "3400 mAh Li-Ion non-removable battery",
+        "display": 5.5,
+        "camera": "16 MP (rear camera), 16 MP (front camera)",
+        "price" : "medium"
     }
 ]
