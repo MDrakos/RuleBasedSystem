@@ -14,6 +14,9 @@ class WorkingMemory:
     def set_rules(self, rules):
         self.rules = rules
 
+    def add_rule(self, rule):
+        self.rules.append(rule)
+
     def set_phones(self, phones):
         self.phones = phones
 
