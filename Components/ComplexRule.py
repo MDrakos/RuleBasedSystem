@@ -12,16 +12,20 @@ __version__ = '1.0'
 
 
 class ComplexRule:
-    def __init__(self, complex_antecedent={}, consequent="", topic=""):
+    def __init__(self, complex_antecedent={}, consequent="", topic="", salience=0):
         self.complex_antecedent = complex_antecedent
         self.consequent = consequent
         self.topic = topic
+        self.salience = salience
 
     def set_antecedent(self, complex_antecedent):
         self.complex_antecedent = complex_antecedent
 
     def set_consequent(self, consequent):
         self.consequent = consequent
+
+    def set_salience(self, salience):
+        self.salience = salience
 
     def get_antecedent(self):
         return self.complex_antecedent
@@ -31,3 +35,6 @@ class ComplexRule:
 
     def get_topic(self):
         return self.topic
+
+    def get_salience(self):
+        return self.salience

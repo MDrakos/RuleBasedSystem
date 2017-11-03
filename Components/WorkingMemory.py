@@ -1,18 +1,24 @@
 from Components.User import User
+from Components.KnowledgeBase import KnowledgeBase
 
 
 class WorkingMemory:
-    def __init__(self, user=User(), rules=[], phones=[], questions=[]):
+    def __init__(self, user=User(), rules=[], phones=[], questions=[], knowledge_base=KnowledgeBase()):
         self.user = user
         self.rules = rules
         self.phones = phones
         self.questions = questions
+        self.knowledge_base = knowledge_base
 
     def set_user(self, user):
         self.user = user
 
     def set_rules(self, rules):
         self.rules = rules
+
+    def add_rule(self, rule):
+        self.knowledge_base.add_rule(rule)
+        self.rules = self.knowledge_base.get_rules()
 
     def set_phones(self, phones):
         self.phones = phones

@@ -10,6 +10,11 @@
     "consequent" : "Samsung"
   },
   {
+    "antecedent" : "prefers OnePlus",
+    "topic"      : "brand",
+    "consequent" : "OnePlus"
+  },
+  {
     "antecedent" : "<200",
     "topic"      : "price",
     "consequent" : "cheap"
