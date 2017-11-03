@@ -42,6 +42,7 @@ class InferenceEngine:
                 rule_antecedents = rule.get_antecedent()
                 user_attributes = user.get_attributes()
                 if rule_antecedents.items() == user_attributes.items():
+                    print(rule_antecedents, user_attributes)
                     potential_complex_rules.append(rule)
 
         our_rule = self.get_max_salience(potential_complex_rules)

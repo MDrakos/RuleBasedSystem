@@ -99,7 +99,7 @@ class Window:
     def load_rules(self):
         if self.rules_file:
             self.rules = fileIO.load_rules(self.rules_file)
-            # print(rules)
+            # print(self.rules)
 
             # Store rules in Knowledge Base
             self.kb.set_rules(self.rules)
@@ -108,13 +108,13 @@ class Window:
     def load_questions(self):
         if self.questions_file:
             self.questions = fileIO.load_questions(self.questions_file)
-            # print(questions)
+            # print(self.questions)
 
             self.wm.set_questions(self.questions)
 
     def load_phones(self):
         if self.phones_file:
-            self.phones = fileIO.load_questions(self.phones_file)
+            self.phones = fileIO.load_phones(self.phones_file)
             # print(self.phones)
 
             self.wm.set_phones(self.phones)
@@ -149,16 +149,15 @@ class Window:
     def set_answer(self):
         for var in self.vars:
             if self.vars.get(var).get():
-                user = self.wm.get_user()
+                self.user = self.wm.get_user()
                 user_topic = var[0]
                 user_answer = var[1]
                 ans = Answer(user_topic, user_answer)
-                user.set_answer(ans)
-                print(user_topic, user_answer)
+                self.user.set_answer(ans)
 
-        self.inference_engine.set_working_memory(self.wm)
-        self.inference_engine.infer()
-        messagebox.showinfo('Result', user.get_phone().get_model())
+        infer = InferenceEngine(self.wm)
+        infer.infer()
+        messagebox.showinfo('Result', self.wm.get_user().get_phone().get_model())
 
 root = Tk()
 root.title("Cellphone selector")
