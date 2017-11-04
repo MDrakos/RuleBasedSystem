@@ -42,23 +42,32 @@ class Window:
         bar_placeholder2 = Entry(master, textvariable=self.phones_file).grid(row=4, column=2)
 
         # First file buttons
-        self.cbutton = Button(root, text="Load Rules", command=self.load_rules)
-        self.cbutton.grid(row=2, column=4, sticky=W + E)
+        #self.cbutton = Button(root, text="Load Rules", command=self.load_rules)
+
+
         self.bbutton = Button(root, text="Browse", command=self.browse_rules_file)
         self.bbutton.grid(row=2, column=1)
 
-        self.cbutton = Button(root, text="Load Questions", command=self.load_questions)
-        self.cbutton.grid(row=3, column=4, sticky=W + E)
+        #self.cbutton = Button(root, text="Load Questions", command=self.load_questions)
+        #self.cbutton.grid(row=3, column=4, sticky=W + E)
         self.bbutton = Button(root, text="Browse", command=self.browse_questions_file)
         self.bbutton.grid(row=3, column=1)
 
-        self.cbutton = Button(root, text="Load Phones", command=self.load_phones)
-        self.cbutton.grid(row=4, column=4, sticky=W + E)
+        #self.cbutton = Button(root, text="Load Phones", command=self.load_phones)
+        #self.cbutton.grid(row=4, column=4, sticky=W + E)
         self.bbutton = Button(root, text="Browse", command=self.browse_phones_file)
         self.bbutton.grid(row=4, column=1)
 
+        self.cbutton = Button(root, text="Load all", command=self.load_all)
+        self.cbutton.grid(row=3, column=4, sticky=W + E)
+
         self.bbutton = Button(root, text="Next", command=self.get_user_name)
         self.bbutton.grid(row=5, column=2)
+
+    def load_all(self):
+        self.load_rules()
+        self.load_questions()
+        self.load_phones()
 
     def get_user_name(self):
         name_start = tk.Toplevel(root)
