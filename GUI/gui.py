@@ -52,27 +52,27 @@ class Window:
         phones_json = Label(master, text="Phones JSON").grid(row=5, column=0)
         bar_placeholder2 = Entry(master, textvariable=self.phones_file).grid(row=5, column=2)
 
-        self.bbutton = Button(master, text="Load Rules", command=self.browse_rules_file)
-        self.bbutton.grid(row=3, column=4)
+        self.rules_button = Button(master, text="Load Rules", command=self.load_rules)
+        self.rules_button.grid(row=3, column=4)
 
-        self.bbutton = Button(master, text="Browse", command=self.browse_rules_file)
-        self.bbutton.grid(row=3, column=1)
+        self.browse_rules = Button(master, text="Browse", command=self.browse_rules_file)
+        self.browse_rules.grid(row=3, column=1)
 
-        self.cbutton = Button(master, text="Load Questions", command=self.load_questions)
-        self.cbutton.grid(row=4, column=4, sticky=W + E)
-        self.bbutton = Button(master, text="Browse", command=self.browse_questions_file)
-        self.bbutton.grid(row=4, column=1)
+        self.questions_button = Button(master, text="Load Questions", command=self.load_questions)
+        self.questions_button.grid(row=4, column=4, sticky=W + E)
+        self.browse_questions = Button(master, text="Browse", command=self.browse_questions_file)
+        self.browse_questions.grid(row=4, column=1)
 
-        self.cbutton = Button(master, text="Load Phones", command=self.load_phones)
-        self.cbutton.grid(row=5, column=4, sticky=W + E)
-        self.bbutton = Button(master, text="Browse", command=self.browse_phones_file)
-        self.bbutton.grid(row=5, column=1)
+        self.phones_button = Button(master, text="Load Phones", command=self.load_phones)
+        self.phones_button.grid(row=5, column=4, sticky=W + E)
+        self.browse_phones = Button(master, text="Browse", command=self.browse_phones_file)
+        self.browse_phones.grid(row=5, column=1)
 
-        self.cbutton = Button(master, text="Load all", command=self.load_all)
-        self.cbutton.grid(row=3, column=5, sticky=W + E)
+        self.load_all_button = Button(master, text="Load all", command=self.load_all)
+        self.load_all_button.grid(row=4, column=5, sticky=W + E)
 
-        self.bbutton = Button(master, text="Next", command=self.display_questions)
-        self.bbutton.grid(row=6, column=2)
+        self.next_button = Button(master, text="Next", command=self.display_questions)
+        self.next_button.grid(row=6, column=2)
 
     def browse_rules_file(self):
         from tkinter.filedialog import askopenfilename
@@ -112,12 +112,18 @@ class Window:
             self.kb.set_rules(self.rules)
             self.wm.set_rules(self.kb.get_rules())
 
+            # if self.wm.get_rules():
+            #     messagebox.showinfo("Load Successful", "Rules file loaded successfully")
+
     def load_questions(self):
         if self.questions_file:
             self.questions = fileIO.load_questions(self.questions_file)
 
             # Store questions in Working Memory
             self.wm.set_questions(self.questions)
+
+            # if self.wm.get_rules():
+            #     messagebox.showinfo("Load Successful", "Questions file loaded successfully")
 
     def load_phones(self):
         if self.phones_file:
@@ -126,10 +132,16 @@ class Window:
             # Store phones in Working Memory
             self.wm.set_phones(self.phones)
 
+            # if self.wm.get_rules():
+            #     messagebox.showinfo("Load Successful", "Phones file loaded successfully")
+
     def load_all(self):
         self.load_rules()
         self.load_questions()
         self.load_phones()
+
+        if self.questions_file and self.phones_file and self.rules_file:
+            messagebox.showinfo("Success", "All files loaded successfully")
 
     def display_questions(self):
         if self.user.first_name and self.user.last_name:
@@ -176,14 +188,27 @@ class Window:
 
     def display_results(self):
         self.results_window = tk.Toplevel(root)
-        Label(self.results_window, text="Best matched phone: ").grid(row=0, column=0)
-        Label(self.results_window, text=self.user_result).grid(row=1, column=2)
-        # add explanations here
-        Label(self.results_window, text="Is this what you are looking for?").grid(row=2, column=0)
+        phone = self.wm.get_user().get_phone()
+        attributes = phone.get_attributes()
+        print(attributes)
+        Label(self.results_window, text="Best matched phone: ").pack()
+        Label(self.results_window, text=self.user_result).pack()
+
+        # Explanations
+        Label(self.results_window, text="This phone was selected for the following reasons:").pack()
+        for answer in self.wm.get_user().get_answers():
+            topic = answer.get_topic()
+            content = answer.get_content()
+            Label(self.results_window, text="For: " + topic).pack()
+            Label(self.results_window, text="Your answer was " + content).pack()
+            print(attributes[topic])
+            Label(self.results_window, text="For this phone: " + topic + " is " + attributes[topic]).pack()
+
+        Label(self.results_window, text="Is this the phone you expected?").pack()
         self.bbutton = Button(self.results_window, text="Yes", command=self.update_salience)
-        self.bbutton.grid(row=3, column=0)
+        self.bbutton.pack()
         self.bbutton = Button(self.results_window, text="No", command=self.update_rule)
-        self.bbutton.grid(row=3, column=2)
+        self.bbutton.pack()
 
     def update_salience(self):
         last_fired_rule = self.inference_engine.get_fired_rules()[-1]

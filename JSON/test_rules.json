@@ -31,17 +31,17 @@
   },
   {
     "antecedent" : "Carney (small)",
-    "topic"      : "screen size",
+    "topic"      : "display",
     "consequent" : 5.5
   },
   {
     "antecedent" : "Normal",
-    "topic"      : "screen size",
+    "topic"      : "display",
     "consequent" : 5.8
   },
   {
     "antecedent" : "Yeti (large)",
-    "topic"      : "screen size",
+    "topic"      : "display",
     "consequent" : 6.3
   },
   {
@@ -72,7 +72,7 @@
     "antecedent" : {
       "brand" : "Samsung",
       "price" : "expensive",
-      "screen size" : 6.3
+      "display" : 6.3
     },
     "topic"      : "phone",
     "consequent" : "Samsung Galaxy Note 8"

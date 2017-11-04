@@ -13,7 +13,7 @@
     "dimensions"        : "162.5 x 74.8 x 8.6 mm",
     "weight"            : "195 g",
     "battery"           : "3300 mAh Li-Ion, non-removable battery",
-    "display"           : 6.3,
+    "display"           : "6.3",
     "camera"            : "Dual 12 MP (rear camera), 8 MP (front camera)",
     "price"             : "expensive"
   },
@@ -30,7 +30,7 @@
     "dimensions"        : "157.9 x 76.7 x 7.9 mm",
     "weight"            : "175 g",
     "battery"           : "3,520 mAh",
-    "display"           : 6,
+    "display"           : "6",
     "camera"            : "12.2 MP (rear camera), 8 MP (front camera)",
     "price"             : "expensive"
   },
@@ -46,7 +46,7 @@
         "os": "iOS 11",
         "weight": "202g",
         "battery": "2675 mAh Li-Po non-removable battery",
-        "display": 5.5,
+        "display": "5.5",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price" : "expensive"
   },
@@ -62,7 +62,7 @@
         "os": "iOS 11",
         "weight": "174g",
         "battery": "2716 mAh Li-Po non-removable battery",
-        "display": 5.8,
+        "display": "5.8",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price" : "expensive"
   },
@@ -78,7 +78,7 @@
         "os": "iOS 10",
         "weight": "138g",
         "battery": "1960 mAH Li-Po non-removable battery",
-        "display": 4.7,
+        "display": "4.7",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price" : "cheap"
   },
@@ -94,7 +94,7 @@
         "os": "iOS 10",
         "weight": "188g",
         "battery": "2900 mAH Li-Po non-removable battery",
-        "display": 5.5,
+        "display": "5.5",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price" : "medium"
   },
@@ -110,7 +110,7 @@
         "os": "Android 6.0 Marshmallow",
         "weight": "158g",
         "battery": "3400 mAh Li-Ion non-removable battery",
-        "display": 5.5,
+        "display": "5.5",
         "camera": "16 MP (rear camera), 16 MP (front camera)",
         "price" : "medium"
     }

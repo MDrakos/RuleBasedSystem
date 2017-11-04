@@ -21,6 +21,9 @@ class Phone:
     def get_model(self):
         return self.attributes['model']
 
+    def get_brand(self):
+        return self.attributes['brand']
+
     def get_cpu(self):
         return self.attributes['cpu']
 
@@ -59,3 +62,6 @@ class Phone:
 
     def get_camera(self):
         return self.attributes['camera']
+
+    def get_price(self):
+        return self.attributes['price']
