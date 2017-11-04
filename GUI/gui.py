@@ -18,76 +18,63 @@ class Window:
         self.wm = WorkingMemory()
         self.kb = KnowledgeBase()
         self.inference_engine = InferenceEngine()
+        self.user_result = ""
+        self.questions_window = None
+        self.results_window = None
 
         image = Image.open("my_logo.png")
         photo = ImageTk.PhotoImage(image)
         label = Label(image=photo)
         label.image = photo  # keep a reference!
-        label.grid(row=1,column = 2)
+        label.grid(row=0, column=2)
 
+        first_name_label = Label(master, text="Enter first name").grid(row=1, column=1)
+        self.first_name = Entry(master).grid(row=1, column=2)
+        last_name_label = Label(master, text="Enter last name").grid(row=2, column=1)
+        self.last_name = Entry(master).grid(row=2, column=2)
 
         self.rules = []
         self.rules_file = " "
-        rules_json = Label(root, text="Rules JSON").grid(row=2, column=0)
-        bar_placeholder1 = Entry(master, textvariable=self.rules_file).grid(row=2, column=2)
+        rules_json = Label(master, text="Rules JSON").grid(row=3, column=0)
+        bar_placeholder1 = Entry(master, textvariable=self.rules_file).grid(row=3, column=2)
 
         self.questions = []
         self.questions_file = " "
-        questions_json = Label(root, text="Questions JSON").grid(row=3, column=0)
-        bar_placeholder2 = Entry(master, textvariable=self.questions_file).grid(row=3, column=2)
+        questions_json = Label(master, text="Questions JSON").grid(row=4, column=0)
+        bar_placeholder2 = Entry(master, textvariable=self.questions_file).grid(row=4, column=2)
 
         self.phones = []
         self.phones_file = " "
-        phones_json = Label(root, text="Phones JSON").grid(row=4, column=0)
-        bar_placeholder2 = Entry(master, textvariable=self.phones_file).grid(row=4, column=2)
+        phones_json = Label(master, text="Phones JSON").grid(row=5, column=0)
+        bar_placeholder2 = Entry(master, textvariable=self.phones_file).grid(row=5, column=2)
 
-        # First file buttons
-        #self.cbutton = Button(root, text="Load Rules", command=self.load_rules)
+        self.bbutton = Button(master, text="Load Rules", command=self.browse_rules_file)
+        self.bbutton.grid(row=3, column=4)
 
-
-        self.bbutton = Button(root, text="Browse", command=self.browse_rules_file)
-        self.bbutton.grid(row=2, column=1)
-
-        #self.cbutton = Button(root, text="Load Questions", command=self.load_questions)
-        #self.cbutton.grid(row=3, column=4, sticky=W + E)
-        self.bbutton = Button(root, text="Browse", command=self.browse_questions_file)
+        self.bbutton = Button(master, text="Browse", command=self.browse_rules_file)
         self.bbutton.grid(row=3, column=1)
 
-        #self.cbutton = Button(root, text="Load Phones", command=self.load_phones)
-        #self.cbutton.grid(row=4, column=4, sticky=W + E)
-        self.bbutton = Button(root, text="Browse", command=self.browse_phones_file)
+        self.cbutton = Button(master, text="Load Questions", command=self.load_questions)
+        self.cbutton.grid(row=4, column=4, sticky=W + E)
+        self.bbutton = Button(master, text="Browse", command=self.browse_questions_file)
         self.bbutton.grid(row=4, column=1)
 
-        self.cbutton = Button(root, text="Load all", command=self.load_all)
-        self.cbutton.grid(row=3, column=4, sticky=W + E)
+        self.cbutton = Button(master, text="Load Phones", command=self.load_phones)
+        self.cbutton.grid(row=5, column=4, sticky=W + E)
+        self.bbutton = Button(master, text="Browse", command=self.browse_phones_file)
+        self.bbutton.grid(row=5, column=1)
 
-        self.bbutton = Button(root, text="Next", command=self.get_user_name)
-        self.bbutton.grid(row=5, column=2)
+        self.cbutton = Button(master, text="Load all", command=self.load_all)
+        self.cbutton.grid(row=3, column=5, sticky=W + E)
 
-    def load_all(self):
-        self.load_rules()
-        self.load_questions()
-        self.load_phones()
-
-    def get_user_name(self):
-        name_start = tk.Toplevel(root)
-        Label(name_start, text="Type your First Name").grid(row=1,column=0)
-        Label(name_start, text="Type your Last Name").grid(row=2,column=0)
-
-        self.e1 = Entry(name_start)
-        self.e2 = Entry(name_start)
-
-        self.e1.grid(row=1, column=2)
-        self.e2.grid(row=2, column=2)
-
-        self.bbutton = Button(name_start, text="Display Questions", command=self.display_questions)
-        self.bbutton.grid(row=3, column=1)
+        self.bbutton = Button(master, text="Next", command=self.display_questions)
+        self.bbutton.grid(row=6, column=2)
 
     def browse_rules_file(self):
         from tkinter.filedialog import askopenfilename
         first_file_path = StringVar()
         first_bar = Entry(root, textvariable=first_file_path)
-        first_bar.grid(row=2, column=2)
+        first_bar.grid(row=3, column=2)
 
         Tk().withdraw()
         self.rules_file = askopenfilename()
@@ -97,7 +84,7 @@ class Window:
         from tkinter.filedialog import askopenfilename
         second_file_path = StringVar()
         second_bar = Entry(root, textvariable=second_file_path)
-        second_bar.grid(row=3, column=2)
+        second_bar.grid(row=4, column=2)
 
         Tk().withdraw()
         self.questions_file = askopenfilename()
@@ -107,7 +94,7 @@ class Window:
         from tkinter.filedialog import askopenfilename
         third_file_path = StringVar()
         third_bar = Entry(root, textvariable=third_file_path)
-        third_bar.grid(row=4, column=2)
+        third_bar.grid(row=5, column=2)
 
         Tk().withdraw()
         self.phones_file = askopenfilename()
@@ -136,16 +123,21 @@ class Window:
 
             self.wm.set_phones(self.phones)
 
+    def load_all(self):
+        self.load_rules()
+        self.load_questions()
+        self.load_phones()
+
     def display_questions(self):
-        self.user.set_user_first_name(self.e1.get())
-        self.user.set_user_last_name(self.e2.get())
-        window = tk.Toplevel(root)
-        window.minsize(width=666, height=666)
-        window.maxsize(width=666, height=666)
+        # self.user.set_user_first_name(self.first_name.get())
+        # self.user.set_user_last_name(self.last_name.get())
+        self.questions_window = tk.Toplevel(root)
+        self.questions_window.minsize(width=666, height=666)
+        self.questions_window.maxsize(width=666, height=666)
         if self.wm.get_questions():
             self.vars = {}
             for question in self.wm.get_questions():
-                question_label = Label(window, text=question.get_question())
+                question_label = Label(self.questions_window, text=question.get_question())
                 question_label.pack()
                 answers = question.get_possible_answers()
 
@@ -153,10 +145,10 @@ class Window:
                     # print(answer)
                     var = IntVar()
                     self.vars[(question.get_topic(), answer)] = var
-                    check = Checkbutton(window, text=answer, variable=var)
+                    check = Checkbutton(self.questions_window, text=answer, variable=var)
                     check.pack()
 
-        submit = Button(window, text='Submit', command=self.set_answer)
+        submit = Button(self.questions_window, text='Submit', command=self.set_answer)
         submit.pack()
 
     def check_states(self):
@@ -164,6 +156,7 @@ class Window:
             print(self.vars.get(var).get())
 
     def set_answer(self):
+        self.questions_window.destroy()
         for var in self.vars:
             if self.vars.get(var).get():
                 self.user = self.wm.get_user()
@@ -175,15 +168,16 @@ class Window:
         infer = InferenceEngine(self.wm)
         infer.infer()
         self.user_result = self.wm.get_user().get_phone().get_model()
-        #print(self.user_result)
-        #messagebox.showinfo('Result', self.wm.get_user().get_phone().get_model())
-        self_start = tk.Toplevel(root)
-        Label(self_start, text="Best matched phone: ").grid(row=1,column=0)
-        Label(self_start, text=self.user_result).grid(row=1,column=2)
-        Label(self_start, text="Is this what you are looking for?").grid(row=2,column=0)
-        self.bbutton = Button(self_start, text="Yes" ,command = exit)
+        self.display_results()
+
+    def display_results(self):
+        self.results_window = tk.Toplevel(root)
+        Label(self.results_window, text="Best matched phone: ").grid(row=0, column=0)
+        Label(self.results_window, text=self.user_result).grid(row=1, column=2)
+        Label(self.results_window, text="Is this what you are looking for?").grid(row=2, column=0)
+        self.bbutton = Button(self.results_window, text="Yes", command=exit)
         self.bbutton.grid(row=3, column=0)
-        self.bbutton = Button(self_start, text="No", command = self.self_learning)
+        self.bbutton = Button(self.results_window, text="No", command=self.self_learning)
         self.bbutton.grid(row=3, column=2)
 
     def self_learning(self):
@@ -214,6 +208,9 @@ class Window:
         self.new_rules = (new_rule.get_topic(), new_rule.get_antecedent(), new_rule.get_consequent())
 
         messagebox.showinfo("New rules", self.new_rules)
+
+    def close_window(self, win):
+        win.root.destroy()
 
 
 root = Tk()
