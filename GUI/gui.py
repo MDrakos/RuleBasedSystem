@@ -20,6 +20,8 @@ class Window:
         self.kb = KnowledgeBase()
         self.inference_engine = InferenceEngine()
         self.user_result = ""
+        self.vars = {}
+        self.phone_vars = {}
         self.questions_window = None
         self.results_window = None
         self.update_rule_window = None
@@ -105,7 +107,6 @@ class Window:
     def load_rules(self):
         if self.rules_file:
             self.rules = fileIO.load_rules(self.rules_file)
-            # print(self.rules)
 
             # Store rules in Knowledge Base
             self.kb.set_rules(self.rules)
@@ -114,15 +115,15 @@ class Window:
     def load_questions(self):
         if self.questions_file:
             self.questions = fileIO.load_questions(self.questions_file)
-            # print(self.questions)
 
+            # Store questions in Working Memory
             self.wm.set_questions(self.questions)
 
     def load_phones(self):
         if self.phones_file:
             self.phones = fileIO.load_phones(self.phones_file)
-            # print(self.phones)
 
+            # Store phones in Working Memory
             self.wm.set_phones(self.phones)
 
     def load_all(self):
@@ -131,8 +132,9 @@ class Window:
         self.load_phones()
 
     def display_questions(self):
-        # self.user.set_user_first_name(self.first_name.get())
-        # self.user.set_user_last_name(self.last_name.get())
+        if self.user.first_name and self.user.last_name:
+            self.user.set_user_first_name(self.first_name.get())
+            self.user.set_user_last_name(self.last_name.get())
         self.questions_window = tk.Toplevel(root)
         self.questions_window.minsize(width=666, height=666)
         self.questions_window.maxsize(width=666, height=666)
