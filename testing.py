@@ -8,9 +8,9 @@ from Components.KnowledgeBase import KnowledgeBase
 from Components.ComplexRule import ComplexRule
 
 def test_file_io():
-    FileIO.load_rules('JSON/test_rules.json')
+    FileIO.load_rules('JSON/rules.json')
     FileIO.load_phones('JSON/phones.json')
-    FileIO.load_questions('JSON/test_questions.json')
+    FileIO.load_questions('JSON/questions.json')
 
 # test_file_io()
 
@@ -22,9 +22,9 @@ def test_process():
     kb = KnowledgeBase()
 
     # Import rules, phones, and questions
-    rules = FileIO.load_rules('JSON/test_rules.json')
+    rules = FileIO.load_rules('JSON/rules.json')
     phones = FileIO.load_phones('JSON/phones.json')
-    questions = FileIO.load_questions('JSON/test_questions.json')
+    questions = FileIO.load_questions('JSON/questions.json')
 
     # Store rules in Knowledge Base
     kb.set_rules(rules)
