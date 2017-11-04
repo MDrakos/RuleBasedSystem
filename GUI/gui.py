@@ -112,6 +112,11 @@ class Window:
 
             self.wm.set_phones(self.phones)
 
+    def load_all(self):
+        self.load_rules()
+        self.load_phones()
+        self.load_questions()
+
     def display_questions(self):
         self.user.set_user_first_name(self.e1.get())
         self.user.set_user_last_name(self.e2.get())
