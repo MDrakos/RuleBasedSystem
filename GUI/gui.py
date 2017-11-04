@@ -11,6 +11,7 @@ from Components.KnowledgeBase import KnowledgeBase
 from Components.ComplexRule import ComplexRule
 from PIL import ImageTk, Image
 
+
 class Window:
     def __init__(self, master):
         # create blank user, working memory, and knowledge base
@@ -216,7 +217,6 @@ class Window:
                 new_rule = ComplexRule(new_antecedents, var, new_topic, new_salience)
                 self.wm.add_rule(new_rule)
 
-        print(new_rule.get_topic(), new_rule.get_antecedent(), new_rule.get_consequent())
         messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
 
 
