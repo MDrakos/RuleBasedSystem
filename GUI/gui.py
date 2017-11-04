@@ -60,25 +60,24 @@ class Window:
         self.bbutton.grid(row=5, column=2)
 
     def get_user_name(self):
-        root.forget()
         name_start = tk.Toplevel(root)
-        Label(root, text="Type your First Name").grid(row=2,column=0)
-        Label(root, text="Type your Last Name").grid(row=2,column=0)
+        Label(name_start, text="Type your First Name").grid(row=1,column=0)
+        Label(name_start, text="Type your Last Name").grid(row=2,column=0)
 
-        self.e1 = Entry(root)
-        self.e2 = Entry(root)
+        self.e1 = Entry(name_start)
+        self.e2 = Entry(name_start)
 
         self.e1.grid(row=1, column=2)
         self.e2.grid(row=2, column=2)
 
-        self.bbutton = Button(root, text="Display Questions", command=self.display_questions)
+        self.bbutton = Button(name_start, text="Display Questions", command=self.display_questions)
         self.bbutton.grid(row=3, column=1)
 
     def browse_rules_file(self):
         from tkinter.filedialog import askopenfilename
         first_file_path = StringVar()
         first_bar = Entry(root, textvariable=first_file_path)
-        first_bar.grid(row=1, column=2)
+        first_bar.grid(row=2, column=2)
 
         Tk().withdraw()
         self.rules_file = askopenfilename()
@@ -88,7 +87,7 @@ class Window:
         from tkinter.filedialog import askopenfilename
         second_file_path = StringVar()
         second_bar = Entry(root, textvariable=second_file_path)
-        second_bar.grid(row=2, column=2)
+        second_bar.grid(row=3, column=2)
 
         Tk().withdraw()
         self.questions_file = askopenfilename()
@@ -98,7 +97,7 @@ class Window:
         from tkinter.filedialog import askopenfilename
         third_file_path = StringVar()
         third_bar = Entry(root, textvariable=third_file_path)
-        third_bar.grid(row=3, column=2)
+        third_bar.grid(row=4, column=2)
 
         Tk().withdraw()
         self.phones_file = askopenfilename()
