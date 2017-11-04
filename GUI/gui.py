@@ -21,6 +21,7 @@ class Window:
         self.user_result = ""
         self.questions_window = None
         self.results_window = None
+        self.update_rule_window = None
 
         image = Image.open("my_logo.png")
         photo = ImageTk.PhotoImage(image)
@@ -165,8 +166,8 @@ class Window:
                 ans = Answer(user_topic, user_answer)
                 self.user.set_answer(ans)
 
-        infer = InferenceEngine(self.wm)
-        infer.infer()
+        self.inference_engine = InferenceEngine(self.wm)
+        self.inference_engine.infer()
         self.user_result = self.wm.get_user().get_phone().get_model()
         self.display_results()
 
@@ -174,11 +175,49 @@ class Window:
         self.results_window = tk.Toplevel(root)
         Label(self.results_window, text="Best matched phone: ").grid(row=0, column=0)
         Label(self.results_window, text=self.user_result).grid(row=1, column=2)
+        # add explanations here
         Label(self.results_window, text="Is this what you are looking for?").grid(row=2, column=0)
-        self.bbutton = Button(self.results_window, text="Yes", command=exit)
+        self.bbutton = Button(self.results_window, text="Yes", command=self.update_salience)
         self.bbutton.grid(row=3, column=0)
-        self.bbutton = Button(self.results_window, text="No", command=self.self_learning)
+        self.bbutton = Button(self.results_window, text="No", command=self.update_rule)
         self.bbutton.grid(row=3, column=2)
+
+    def update_salience(self):
+        last_fired_rule = self.inference_engine.get_fired_rules()[-1]
+        last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
+        messagebox.showinfo("Thanks", "Great! Thanks you :)")
+
+    def update_rule(self):
+        self.results_window.destroy()
+        self.update_rule_window = tk.Toplevel(root)
+        self.update_rule_window.minsize(width=666, height=666)
+        self.update_rule_window.maxsize(width=666, height=666)
+        question = Label(self.update_rule_window, text="What phone do you think is a better choice?")
+        question.pack()
+        self.phone_vars = {}
+        for phone in self.phones:
+            var = IntVar()
+            phone_model = phone.get_model()
+            self.phone_vars[phone.get_model()] = var
+            check = Checkbutton(self.update_rule_window, text=phone_model, variable=var)
+            check.pack()
+
+        submit = Button(self.update_rule_window, text='Submit', command=self.set_new_rule)
+        submit.pack()
+
+    def set_new_rule(self):
+        last_fired_rule = self.inference_engine.get_fired_rules()[-1]
+        new_rule = ComplexRule()
+        for var in self.phone_vars:
+            if self.phone_vars.get(var).get():
+                new_antecedents = last_fired_rule.get_antecedent()
+                new_topic = last_fired_rule.get_topic()
+                new_salience = last_fired_rule.get_salience() + 1
+                new_rule = ComplexRule(new_antecedents, var, new_topic, new_salience)
+                self.wm.add_rule(new_rule)
+
+        print(new_rule.get_topic(), new_rule.get_antecedent(), new_rule.get_consequent())
+        messagebox.showinfo("New rule created for", new_rule.get_consequent())
 
     def self_learning(self):
         self_learn = tk.Toplevel(root)
