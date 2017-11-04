@@ -8,7 +8,7 @@ from Components.Answer import Answer
 from Components.WorkingMemory import WorkingMemory
 from Components.InferenceEngine import InferenceEngine
 from Components.KnowledgeBase import KnowledgeBase
-
+from PIL import ImageTk, Image
 
 class Window:
     def __init__(self, master):
@@ -18,52 +18,60 @@ class Window:
         self.kb = KnowledgeBase()
         self.inference_engine = InferenceEngine()
 
+        image = Image.open("my_logo.png")
+        photo = ImageTk.PhotoImage(image)
+        label = Label(image=photo)
+        label.image = photo  # keep a reference!
+        label.grid(row=1,column = 2)
+
+
         self.rules = []
         self.rules_file = " "
-        rules_json = Label(root, text="Rules JSON").grid(row=1, column=0)
-        bar_placeholder1 = Entry(master, textvariable=self.rules_file).grid(row=1, column=2)
+        rules_json = Label(root, text="Rules JSON").grid(row=2, column=0)
+        bar_placeholder1 = Entry(master, textvariable=self.rules_file).grid(row=2, column=2)
 
         self.questions = []
         self.questions_file = " "
-        questions_json = Label(root, text="Questions JSON").grid(row=2, column=0)
-        bar_placeholder2 = Entry(master, textvariable=self.questions_file).grid(row=2, column=2)
+        questions_json = Label(root, text="Questions JSON").grid(row=3, column=0)
+        bar_placeholder2 = Entry(master, textvariable=self.questions_file).grid(row=3, column=2)
 
         self.phones = []
         self.phones_file = " "
-        phones_json = Label(root, text="Phones JSON").grid(row=3, column=0)
-        bar_placeholder2 = Entry(master, textvariable=self.phones_file).grid(row=3, column=2)
+        phones_json = Label(root, text="Phones JSON").grid(row=4, column=0)
+        bar_placeholder2 = Entry(master, textvariable=self.phones_file).grid(row=4, column=2)
 
         # First file buttons
         self.cbutton = Button(root, text="Load Rules", command=self.load_rules)
-        self.cbutton.grid(row=1, column=4, sticky=W + E)
-        self.bbutton = Button(root, text="Browse", command=self.browse_rules_file)
-        self.bbutton.grid(row=1, column=1)
-
-        self.cbutton = Button(root, text="Load Questions", command=self.load_questions)
         self.cbutton.grid(row=2, column=4, sticky=W + E)
-        self.bbutton = Button(root, text="Browse", command=self.browse_questions_file)
+        self.bbutton = Button(root, text="Browse", command=self.browse_rules_file)
         self.bbutton.grid(row=2, column=1)
 
-        self.cbutton = Button(root, text="Load Phones", command=self.load_phones)
+        self.cbutton = Button(root, text="Load Questions", command=self.load_questions)
         self.cbutton.grid(row=3, column=4, sticky=W + E)
-        self.bbutton = Button(root, text="Browse", command=self.browse_phones_file)
+        self.bbutton = Button(root, text="Browse", command=self.browse_questions_file)
         self.bbutton.grid(row=3, column=1)
 
+        self.cbutton = Button(root, text="Load Phones", command=self.load_phones)
+        self.cbutton.grid(row=4, column=4, sticky=W + E)
+        self.bbutton = Button(root, text="Browse", command=self.browse_phones_file)
+        self.bbutton.grid(row=4, column=1)
+
         self.bbutton = Button(root, text="Next", command=self.get_user_name)
-        self.bbutton.grid(row=4, column=2)
+        self.bbutton.grid(row=5, column=2)
 
     def get_user_name(self):
+        root.forget()
         name_start = tk.Toplevel(root)
-        Label(name_start, text="Type your First Name").grid(row=1,column=0)
-        Label(name_start, text="Type your Last Name").grid(row=2,column=0)
+        Label(root, text="Type your First Name").grid(row=2,column=0)
+        Label(root, text="Type your Last Name").grid(row=2,column=0)
 
-        self.e1 = Entry(name_start)
-        self.e2 = Entry(name_start)
+        self.e1 = Entry(root)
+        self.e2 = Entry(root)
 
         self.e1.grid(row=1, column=2)
         self.e2.grid(row=2, column=2)
 
-        self.bbutton = Button(name_start, text="Display Questions", command=self.display_questions)
+        self.bbutton = Button(root, text="Display Questions", command=self.display_questions)
         self.bbutton.grid(row=3, column=1)
 
     def browse_rules_file(self):
