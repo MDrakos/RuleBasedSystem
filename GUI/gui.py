@@ -185,7 +185,7 @@ class Window:
     def update_salience(self):
         last_fired_rule = self.inference_engine.get_fired_rules()[-1]
         last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
-        messagebox.showinfo("Thanks", "Great! Thanks you :)")
+        messagebox.showinfo("Thanks", "Great! Thank you :)")
 
     def update_rule(self):
         self.results_window.destroy()
@@ -217,39 +217,7 @@ class Window:
                 self.wm.add_rule(new_rule)
 
         print(new_rule.get_topic(), new_rule.get_antecedent(), new_rule.get_consequent())
-        messagebox.showinfo("New rule created for", new_rule.get_consequent())
-
-    def self_learning(self):
-        self_learn = tk.Toplevel(root)
-
-        Label(self_learn, text="What phone do you think is a better choice?").grid(row=0)
-
-        self.e3 = Entry(self_learn)
-
-        self.e3.grid(row=0, column=1)
-
-        self.bbutton = Button(self_learn, text="Enter new rules", command = self.result_box)
-        self.bbutton.grid(row=3, column=0)
-
-    def result_box(self):
-
-        infer = InferenceEngine(self.wm)
-        infer.infer()
-        last_fired_rule = infer.get_fired_rules()[-1]
-
-        correct_model = self.e3.get()
-
-        new_antecedents = last_fired_rule.get_antecedent()
-        new_topic = last_fired_rule.get_topic()
-        new_salience = last_fired_rule.get_salience() + 1
-        new_rule = ComplexRule(new_antecedents, correct_model, new_topic, new_salience)
-        self.wm.add_rule(new_rule)
-        self.new_rules = (new_rule.get_topic(), new_rule.get_antecedent(), new_rule.get_consequent())
-
-        messagebox.showinfo("New rules", self.new_rules)
-
-    def close_window(self, win):
-        win.root.destroy()
+        messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
 
 
 root = Tk()
