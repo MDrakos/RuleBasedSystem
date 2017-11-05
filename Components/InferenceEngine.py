@@ -41,9 +41,7 @@ class InferenceEngine:
             # Isolate rules with complex antecedents
             if isinstance(rule.get_antecedent(), dict):
                 rule_antecedents = rule.get_antecedent()
-                print(rule_antecedents)
                 user_attributes = user.get_attributes()
-                print(user_attributes)
                 if rule_antecedents.items() == user_attributes.items():
                     potential_complex_rules.append(rule)
 

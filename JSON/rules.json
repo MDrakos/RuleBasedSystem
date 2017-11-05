@@ -20,6 +20,11 @@
     "consequent" : "LG"
   },
   {
+    "antecedent" : "prefers Google",
+    "topic"      : "brand",
+    "consequent" : "Google"
+  },
+  {
     "antecedent" : "<200",
     "topic"      : "price",
     "consequent" : "cheap"
@@ -63,6 +68,21 @@
     "antecedent" : "I'm weak",
     "topic"      : "heaviness",
     "consequent" : "light"
+  },
+  {
+    "antecedent" : "Love it",
+    "topic"      : "batteryLife",
+    "consequent" : "poor"
+  },
+  {
+    "antecedent" : "S'ok",
+    "topic"      : "batteryLife",
+    "consequent" : "average"
+  },
+  {
+    "antecedent" : "Hate it",
+    "topic"      : "batteryLife",
+    "consequent" : "good"
   },
   {
     "antecedent" : {

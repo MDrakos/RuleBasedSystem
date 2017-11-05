@@ -13,6 +13,7 @@
         "weight": "195g",
         "heaviness": "heavy",
         "battery": "3300 mAh Li-Ion, non-removable battery",
+        "batteryLife": "good",
         "display": "6.3",
         "camera": "Dual 12 MP (rear camera), 8 MP (front camera)",
         "price": "expensive"
@@ -31,6 +32,7 @@
         "weight": "175g",
         "heaviness": "average",
         "battery": "3,520 mAh",
+        "batteryLife": "good",
         "display": "6",
         "camera": "12.2 MP (rear camera), 8 MP (front camera)",
         "price": "expensive"
@@ -49,6 +51,7 @@
         "weight": "143g",
         "heaviness": "light",
         "battery": "2,700 mAh",
+        "batteryLife": "average",
         "display": "5",
         "camera": "12.2 MP (rear camera), 8 MP (front camera)",
         "price": "expensive"
@@ -67,6 +70,7 @@
         "weight": "162g",
         "heaviness": "average",
         "battery": "3300 mAh Li-Po, non removable battery",
+        "batteryLife": "good",
         "display": "5.7",
         "camera": "Dual 13 MP (rear camera), 5 MP (front camera)",
         "price": "expensive"
@@ -85,6 +89,7 @@
         "weight": "180g",
         "heaviness": "heavy",
         "battery": "3505 mAh Li-Ion non-removable battery",
+        "batteryLife": "good",
         "display": "4.5",
         "camera": "12 MP (rear camera), 8 MP (front camera)",
         "price": "medium"
@@ -103,6 +108,7 @@
         "weight": "195g",
         "heaviness": "heavy",
         "battery": "3230 mAh Li-ion non-removable battery",
+        "batteryLife": "good",
         "display": "5.46",
         "camera": "19 MP (rear camera), 13 MP (front camera)",
         "price": "expensive"
@@ -121,6 +127,7 @@
         "weight": "152g",
         "heaviness": "light",
         "battery": "3000 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5.8",
         "camera": "12 MP (rear camera), 8 MP (front camera)",
         "price": "expensive"
@@ -139,6 +146,7 @@
         "weight": "153g",
         "heaviness": "light",
         "battery": "3400 mAh Li-Ion non-removable battery",
+        "batteryLife": "good",
         "display": "5.5",
         "camera": "Dual 16 MP + 20 MP (rear camera), 16 MP (front camera)",
         "price": "medium"
@@ -157,6 +165,7 @@
         "weight": "155g",
         "heaviness": "light",
         "battery": "3000 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5.2",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
         "price": "medium"
@@ -175,6 +184,7 @@
         "weight": "143g",
         "heaviness": "light",
         "battery": "2730 mAh Li-Ion non-removable battery",
+        "batteryLife": "poor",
         "display": "5.5",
         "camera": "Dual 12 MP (rear camera), 5 MP (front camera)",
         "price": "medium"
@@ -193,6 +203,7 @@
         "weight": "148g",
         "heaviness": "light",
         "battery": "1821 mAh Li-Po non-removable battery",
+        "batteryLife": "poor",
         "display": "4.7",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price": "expensive"
@@ -211,6 +222,7 @@
         "weight": "202g",
         "heaviness": "heavy",
         "battery": "2675 mAh Li-Po non-removable battery",
+        "batteryLife": "average",
         "display": "5.5",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price": "expensive"
@@ -229,6 +241,7 @@
         "weight": "174g",
         "heaviness": "average",
         "battery": "2716 mAh Li-Po non-removable battery",
+        "batteryLife": "average",
         "display": "5.8",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price": "expensive"
@@ -247,6 +260,7 @@
         "weight": "158g",
         "heaviness": "light",
         "battery": "3400 mAh Li-Ion non-removable battery",
+        "batteryLife": "good",
         "display": "5.5",
         "camera": "16 MP (rear camera), 16 MP (front camera)",
         "price": "medium"
@@ -265,6 +279,7 @@
         "weight": "174g",
         "heaviness": "average",
         "battery": "3250 mAh Li-Ion removable battery",
+        "batteryLife": "good",
         "display": "5.7",
         "camera": "Dual 16 MP (rear camera), 5 MP (front camera)",
         "price": "medium"
@@ -283,6 +298,7 @@
         "weight": "136g",
         "heaviness": "light",
         "battery": "2600 mAh Li-Ion non-removable battery",
+        "batteryLife": "poor",
         "display": "5.5",
         "camera": "13 MP (rear camera), 5 MP (front camera)",
         "price": "cheap"
@@ -301,6 +317,7 @@
         "weight": "168g",
         "heaviness": "average",
         "battery": "3450 mAh Li-Ion non-removable battery",
+        "batteryLife": "good",
         "display": "5.5",
         "camera": "12.3 MP (rear camera), 8 MP (front camera)",
         "price": "medium"
@@ -319,6 +336,7 @@
         "weight": "143g",
         "heaviness": "light",
         "battery": "2770 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5",
         "camera": "12.3 MP (rear camera), 8 MP (front camera)",
         "price": "medium"
@@ -337,6 +355,7 @@
         "weight": "152g",
         "heaviness": "light",
         "battery": "3000 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5.1",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
         "price": "medium"
@@ -355,6 +374,7 @@
         "weight": "157g",
         "heaviness": "light",
         "battery": "3600 mAh Li-Ion non-removable battery",
+        "batteryLife": "good",
         "display": "5.5",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
         "price": "medium"
@@ -373,6 +393,7 @@
         "weight": "160g",
         "heaviness": "average",
         "battery": "3000 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5.2",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
         "price": "medium"
@@ -391,6 +412,7 @@
         "weight": "159g",
         "heaviness": "light",
         "battery": "2800 mAh Li-Ion removable battery",
+        "batteryLife": "average",
         "display": "5.3",
         "camera": "Dual 16 MP (rear camera), 8 MP (front camera)",
         "price": "medium"
@@ -409,6 +431,7 @@
         "weight": "164.4g",
         "heaviness": "average",
         "battery": "2700 mAh Li-Ion Non-removable Battery",
+        "batteryLife": "poor",
         "display": "5",
         "camera": "23 MP (rear camera), 13 MP (front camera",
         "price": "medium"
@@ -427,6 +450,7 @@
         "weight": "144g",
         "heaviness": "light",
         "battery": "3000 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5.2",
         "camera": "12 MP (rear camera), 8 MP (front camera)",
         "price": "cheap"
@@ -445,6 +469,7 @@
         "weight": "135g",
         "heaviness": "light",
         "battery": "2610 mAh Li-Ion non-removable battery",
+        "batteryLife": "poor",
         "display": "5.2",
         "camera": "13 MP (rear camera), 8 MP (front camera)",
         "price": "cheap"
@@ -463,6 +488,7 @@
         "weight": "161g",
         "heaviness": "average",
         "battery": "2900 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5.2",
         "camera": "23 MP (rear camera), 13 MP (front camera)",
         "price": "cheap"
@@ -481,6 +507,7 @@
         "weight": "158g",
         "heaviness": "light",
         "battery": "3000 mAh Li-Ion non-removable battery",
+        "batteryLife": "average",
         "display": "5.5",
         "camera": "16 MP (rear camera), 8 MP (front camera)",
         "price": "cheap"
@@ -499,6 +526,7 @@
         "weight": "138g",
         "heaviness": "light",
         "battery": "1960 mAH Li-Po non-removable battery",
+        "batteryLife": "poor",
         "display": "4.7",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price": "cheap"
@@ -517,6 +545,7 @@
         "weight": "188g",
         "heaviness": "heavy",
         "battery": "2900 mAH Li-Po non-removable battery",
+        "batteryLife": "average",
         "display": "5.5",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
         "price": "medium"

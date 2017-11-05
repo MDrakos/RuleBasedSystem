@@ -230,10 +230,7 @@ class Window:
         last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
         messagebox.showinfo("Thanks", "Great! Thank you :)")
 
-        self.bbutton = Button(self.update_salience_window, text="Try again?", command=self.try_again)
-        self.bbutton.pack()
-        self.bbutton = Button(self.update_salience_window, text="Quit?", command=exit)
-        self.bbutton.pack()
+        self.try_again_messagebox()
 
     def rule_addition_query(self):
         self.results_window.destroy()
@@ -313,11 +310,7 @@ class Window:
                     self.inference_engine.set_working_memory(self.wm)
 
             messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
-            try_again = messagebox.askretrycancel("Retry", "Try again?")
-            if try_again:
-                self.try_again()
-            else:
-                quit(0)
+            self.try_again_messagebox()
         else:
             # No complex rule fired, need to create a new one
             new_rule = ComplexRule()
@@ -337,17 +330,16 @@ class Window:
                     self.inference_engine.set_working_memory(self.wm)
 
             messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
-            try_again = messagebox.askretrycancel("Retry", "Try again?")
-            if try_again:
-                self.try_again()
-            else:
-                quit(0)
+            self.try_again_messagebox()
 
     def add_new_rule(self):
         self.wm.add_rule(self.new_rule)
         self.rules = self.wm.get_rules()
         self.inference_engine.set_working_memory(self.wm)
         messagebox.showinfo("New Rule", "Added new rule")
+        self.try_again_messagebox()
+
+    def try_again_messagebox(self):
         try_again = messagebox.askretrycancel("Retry", "Try again?")
         if try_again:
             self.try_again()
@@ -363,6 +355,10 @@ class Window:
             self.results_window.destroy()
         if self.find_rule_window:
             self.find_rule_window.destroy()
+        if self.questions_window:
+            self.questions_window.destroy()
+        if self.update_rule_window:
+            self.update_rule_window.destroy()
 
         # Reset User attributes
         self.user.set_answers([])

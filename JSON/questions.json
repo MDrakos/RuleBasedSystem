@@ -27,5 +27,12 @@
     "answer1"   : "Yeah bro",
     "answer3"   : "I do cardio",
     "answer2"   : "I'm weak"
+  },
+  {
+    "question"  : "How much do you love charging your phone?",
+    "topic"     : "batteryLife",
+    "answer1"   : "Love it",
+    "answer3"   : "S'ok",
+    "answer2"   : "Hate it"
   }
 ]
