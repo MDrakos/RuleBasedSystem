@@ -9,6 +9,7 @@ from Components.WorkingMemory import WorkingMemory
 from Components.InferenceEngine import InferenceEngine
 from Components.KnowledgeBase import KnowledgeBase
 from Components.ComplexRule import ComplexRule
+from Components.Phone import Phone
 from PIL import ImageTk, Image
 
 
@@ -19,7 +20,7 @@ class Window:
         self.wm = WorkingMemory()
         self.kb = KnowledgeBase()
         self.inference_engine = InferenceEngine()
-        self.user_result = ""
+        self.user_result = Phone()
         self.vars = {}
         self.phone_vars = {}
         self.new_rule = ComplexRule()
@@ -297,22 +298,50 @@ class Window:
         submit.pack()
 
     def set_new_rule(self):
+        # If a complex rule fired and was wrong, need to correct it.
         last_fired_rule = self.inference_engine.get_fired_rules()[-1]
-        new_rule = ComplexRule()
-        for var in self.phone_vars:
-            if self.phone_vars.get(var).get():
-                new_antecedents = last_fired_rule.get_antecedent()
-                new_topic = last_fired_rule.get_topic()
-                new_salience = last_fired_rule.get_salience() + 1
-                new_rule = ComplexRule(new_antecedents, var, new_topic, new_salience)
-                self.wm.add_rule(new_rule)
+        if last_fired_rule:
+            new_rule = ComplexRule()
+            for var in self.phone_vars:
+                if self.phone_vars.get(var).get():
+                    new_antecedents = last_fired_rule.get_antecedent()
+                    new_topic = last_fired_rule.get_topic()
+                    new_salience = last_fired_rule.get_salience() + 1
+                    new_rule = ComplexRule(new_antecedents, var, new_topic, new_salience)
+                    self.wm.add_rule(new_rule)
+                    self.rules = self.wm.get_rules()
+                    self.inference_engine.set_working_memory(self.wm)
 
-        messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
-        try_again = messagebox.askretrycancel("Retry", "Try again?")
-        if try_again:
-            self.try_again()
+            messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
+            try_again = messagebox.askretrycancel("Retry", "Try again?")
+            if try_again:
+                self.try_again()
+            else:
+                quit(0)
         else:
-            quit(0)
+            # No complex rule fired, need to create a new one
+            new_rule = ComplexRule()
+            for phone_var in self.phone_vars:
+                new_antecedents = {}
+                if self.phone_vars.get(phone_var).get():
+                    for var in self.vars:
+                        if self.vars.get(var).get():
+                            for rule in self.rules:
+                                if var[1] in rule.get_antecedent():
+                                    new_antecedents[var[0]] = rule.get_consequent()
+                    new_topic = "phone"
+                    new_salience = 1
+                    new_rule = ComplexRule(new_antecedents, phone_var, new_topic, new_salience)
+                    self.wm.add_rule(new_rule)
+                    self.rules = self.wm.get_rules()
+                    self.inference_engine.set_working_memory(self.wm)
+
+            messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
+            try_again = messagebox.askretrycancel("Retry", "Try again?")
+            if try_again:
+                self.try_again()
+            else:
+                quit(0)
 
     def add_new_rule(self):
         self.wm.add_rule(self.new_rule)

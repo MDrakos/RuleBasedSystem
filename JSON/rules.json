@@ -15,6 +15,11 @@
     "consequent" : "OnePlus"
   },
   {
+    "antecedent" : "prefers LG",
+    "topic"      : "brand",
+    "consequent" : "LG"
+  },
+  {
     "antecedent" : "<200",
     "topic"      : "price",
     "consequent" : "cheap"
@@ -32,17 +37,32 @@
   {
     "antecedent" : "Carney (small)",
     "topic"      : "display",
-    "consequent" : 5.5
+    "consequent" : "5.5"
   },
   {
     "antecedent" : "Normal",
     "topic"      : "display",
-    "consequent" : 5.8
+    "consequent" : "5.8"
   },
   {
     "antecedent" : "Yeti (large)",
     "topic"      : "display",
-    "consequent" : 6.3
+    "consequent" : "6.3"
+  },
+  {
+    "antecedent" : "Yeah bro",
+    "topic"      : "heaviness",
+    "consequent" : "heavy"
+  },
+  {
+    "antecedent" : "I do cardio",
+    "topic"      : "heaviness",
+    "consequent" : "average"
+  },
+  {
+    "antecedent" : "I'm weak",
+    "topic"      : "heaviness",
+    "consequent" : "light"
   },
   {
     "antecedent" : {
@@ -72,7 +92,7 @@
     "antecedent" : {
       "brand" : "Samsung",
       "price" : "expensive",
-      "display" : 6.3
+      "display" : "6.3"
     },
     "topic"      : "phone",
     "consequent" : "Samsung Galaxy Note 8"
