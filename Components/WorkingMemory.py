@@ -17,17 +17,14 @@ class WorkingMemory:
         self.rules = rules
 
     def add_rule(self, rule):
+        self.rules.append(rule)
         self.knowledge_base.add_rule(rule)
-        self.rules = self.knowledge_base.get_rules()
 
     def set_phones(self, phones):
         self.phones = phones
 
     def set_questions(self, questions):
         self.questions = questions
-
-    def add_rules(self, rule):
-        self.rules.append(rule)
 
     def add_question(self, question):
         self.questions.append(question)

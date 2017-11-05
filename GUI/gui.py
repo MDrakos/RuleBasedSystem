@@ -22,9 +22,13 @@ class Window:
         self.user_result = ""
         self.vars = {}
         self.phone_vars = {}
+        self.new_rule = ComplexRule()
         self.questions_window = None
         self.results_window = None
         self.update_rule_window = None
+        self.rule_addition_window = None
+        self.find_rule_window = None
+        self.update_salience_window = None
 
         image = Image.open("my_logo.png")
         photo = ImageTk.PhotoImage(image)
@@ -190,7 +194,6 @@ class Window:
         self.results_window = tk.Toplevel(root)
         phone = self.wm.get_user().get_phone()
         attributes = phone.get_attributes()
-        print(attributes)
         Label(self.results_window, text="Best matched phone: ").pack()
         Label(self.results_window, text=self.user_result).pack()
 
@@ -201,22 +204,71 @@ class Window:
             content = answer.get_content()
             Label(self.results_window, text="For: " + topic).pack()
             Label(self.results_window, text="Your answer was " + content).pack()
-            print(attributes[topic])
             Label(self.results_window, text="For this phone: " + topic + " is " + attributes[topic]).pack()
 
         Label(self.results_window, text="Is this the phone you expected?").pack()
         self.bbutton = Button(self.results_window, text="Yes", command=self.update_salience)
         self.bbutton.pack()
-        self.bbutton = Button(self.results_window, text="No", command=self.update_rule)
+        self.bbutton = Button(self.results_window, text="No", command=self.rule_addition_query)
         self.bbutton.pack()
 
     def update_salience(self):
+        self.results_window.destroy()
+        self.update_salience_window = tk.Toplevel(root)
         last_fired_rule = self.inference_engine.get_fired_rules()[-1]
         last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
         messagebox.showinfo("Thanks", "Great! Thank you :)")
 
-    def update_rule(self):
+        self.bbutton = Button(self.update_salience_window, text="Try again?", command=self.try_again)
+        self.bbutton.pack()
+        self.bbutton = Button(self.update_salience_window, text="Quit?", command=exit)
+        self.bbutton.pack()
+
+    def rule_addition_query(self):
         self.results_window.destroy()
+        self.rule_addition_window = tk.Toplevel(root)
+        question = Label(self.rule_addition_window, text="Let me try to add a rule?")
+        question.pack()
+
+        self.bbutton = Button(self.rule_addition_window, text="Yes", command=self.find_rule)
+        self.bbutton.pack()
+        self.bbutton = Button(self.rule_addition_window, text="No", command=self.update_rule)
+        self.bbutton.pack()
+        self.bbutton = Button(self.rule_addition_window, text="Quit", command=exit)
+        self.bbutton.pack()
+
+    def find_rule(self):
+        self.rule_addition_window.destroy()
+        self.find_rule_window = tk.Toplevel(root)
+        self.new_rule = self.inference_engine.find_new_rule()
+
+        if self.new_rule:
+            Label(self.find_rule_window, text="How about this rule?").pack()
+            new_rule_antecedents_text = self.new_rule.get_antecedent()
+            Label(self.find_rule_window, text="Antecedents: ").pack()
+            for antecedent in new_rule_antecedents_text:
+                Label(self.find_rule_window, text="topic: " + antecedent + ", content: " +
+                                                  new_rule_antecedents_text[antecedent]).pack()
+
+            Label(self.find_rule_window, text="Consequent: ").pack()
+            new_rule_consequents_text = self.new_rule.get_consequent()
+            Label(self.find_rule_window, text=new_rule_consequents_text).pack()
+
+            self.bbutton = Button(self.find_rule_window, text="Add", command=self.add_new_rule)
+            self.bbutton.pack()
+            self.bbutton = Button(self.find_rule_window, text="Don't Add", command=self.update_rule)
+            self.bbutton.pack()
+        else:
+            Label(self.find_rule_window, text="Couldn't find new rule").pack()
+            self.bbutton = Button(self.find_rule_window, text="Add rule manually?", command=self.update_rule)
+            self.bbutton.pack()
+            self.bbutton = Button(self.find_rule_window, text="Quit", command=exit)
+            self.bbutton.pack()
+
+    def update_rule(self):
+        self.rule_addition_window.destroy()
+        self.results_window.destroy()
+        self.find_rule_window.destroy()
         self.update_rule_window = tk.Toplevel(root)
         self.update_rule_window.minsize(width=666, height=666)
         self.update_rule_window.maxsize(width=666, height=666)
@@ -245,6 +297,36 @@ class Window:
                 self.wm.add_rule(new_rule)
 
         messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
+        try_again = messagebox.askretrycancel("Retry", "Try again?")
+        if try_again:
+            self.try_again()
+        else:
+            quit(0)
+
+    def add_new_rule(self):
+        self.wm.add_rule(self.new_rule)
+        self.rules = self.wm.get_rules()
+        messagebox.showinfo("New Rule", "Added new rule")
+        try_again = messagebox.askretrycancel("Retry", "Try again?")
+        if try_again:
+            self.try_again()
+        else:
+            quit(0)
+
+    def try_again(self):
+        if self.update_salience_window:
+            self.update_salience_window.destroy()
+        if self.rule_addition_window:
+            self.rule_addition_window.destroy()
+        if self.results_window:
+            self.results_window.destroy()
+        if self.find_rule_window:
+            self.find_rule_window.destroy()
+
+        # Reset User attributes
+        self.user.set_answers([])
+        self.user.set_attributes({})
+        self.display_questions()
 
 
 root = Tk()

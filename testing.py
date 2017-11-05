@@ -65,13 +65,16 @@ def test_process():
         last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
     else:
         print("What phone do you think is a better choice?")
-        correct_model = input()
-        new_antecedents = last_fired_rule.get_antecedent()
-        new_topic = last_fired_rule.get_topic()
-        new_salience = last_fired_rule.get_salience()+1
-        new_rule = ComplexRule(new_antecedents, correct_model, new_topic, new_salience)
-        wm.add_rule(new_rule)
-        print(new_rule.get_topic(), new_rule.get_antecedent(), new_rule.get_consequent())
+        potential_phones = infer.find_new_rule()
+        print(potential_phones)
+
+        # correct_model = input()
+        # new_antecedents = last_fired_rule.get_antecedent()
+        # new_topic = last_fired_rule.get_topic()
+        # new_salience = last_fired_rule.get_salience()+1
+        # new_rule = ComplexRule(new_antecedents, correct_model, new_topic, new_salience)
+        # wm.add_rule(new_rule)
+        # print(new_rule.get_topic(), new_rule.get_antecedent(), new_rule.get_consequent())
 
 
     # user.set_answer("Samsung")
