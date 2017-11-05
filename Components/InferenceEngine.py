@@ -48,13 +48,15 @@ class InferenceEngine:
         our_rule = self.get_max_salience(potential_complex_rules)
         self.fired_rules.append(our_rule)
         for phone in phones:
-            if our_rule.get_consequent() in phone.get_model():
-                user.set_phone(phone)
+            if our_rule:
+                if our_rule.get_consequent() in phone.get_model():
+                    user.set_phone(phone)
+            else:
+                user.set_phone(None)
 
     def find_new_rule(self):
         phones = self.working_memory.get_phones()
         rules = self.working_memory.get_rules()
-        print(rules)
         fired_rules = self.get_fired_rules()
         last_fired_rule = fired_rules[-1]
         last_fired_rule_antecedents = last_fired_rule.get_antecedent()

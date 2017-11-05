@@ -187,30 +187,40 @@ class Window:
 
         self.inference_engine = InferenceEngine(self.wm)
         self.inference_engine.infer()
-        self.user_result = self.wm.get_user().get_phone().get_model()
+        self.user_result = self.wm.get_user().get_phone()
         self.display_results()
 
     def display_results(self):
         self.results_window = tk.Toplevel(root)
-        phone = self.wm.get_user().get_phone()
-        attributes = phone.get_attributes()
-        Label(self.results_window, text="Best matched phone: ").pack()
-        Label(self.results_window, text=self.user_result).pack()
 
         # Explanations
-        Label(self.results_window, text="This phone was selected for the following reasons:").pack()
-        for answer in self.wm.get_user().get_answers():
-            topic = answer.get_topic()
-            content = answer.get_content()
-            Label(self.results_window, text="For: " + topic).pack()
-            Label(self.results_window, text="Your answer was " + content).pack()
-            Label(self.results_window, text="For this phone: " + topic + " is " + attributes[topic]).pack()
+        if self.user_result:
+            phone = self.wm.get_user().get_phone()
+            attributes = phone.get_attributes()
+            Label(self.results_window, text="Best matched phone: ").pack()
+            Label(self.results_window, text=self.user_result.get_model()).pack()
+            Label(self.results_window, text="This phone was selected for the following reasons:").pack()
+            for answer in self.wm.get_user().get_answers():
+                topic = answer.get_topic()
+                content = answer.get_content()
+                Label(self.results_window, text="For: " + topic).pack()
+                Label(self.results_window, text="Your answer was " + content).pack()
+                Label(self.results_window, text="For this phone: " + topic + " is " + attributes[topic]).pack()
 
-        Label(self.results_window, text="Is this the phone you expected?").pack()
-        self.bbutton = Button(self.results_window, text="Yes", command=self.update_salience)
-        self.bbutton.pack()
-        self.bbutton = Button(self.results_window, text="No", command=self.rule_addition_query)
-        self.bbutton.pack()
+            Label(self.results_window, text="Is this the phone you expected?").pack()
+            self.bbutton = Button(self.results_window, text="Yes", command=self.update_salience)
+            self.bbutton.pack()
+            self.bbutton = Button(self.results_window, text="No", command=self.rule_addition_query)
+            self.bbutton.pack()
+        else:
+            Label(self.results_window, text="Uh oh. I couldn't find a phone").pack()
+
+            self.bbutton = Button(self.results_window, text="Add Rule?", command=self.update_rule)
+            self.bbutton.pack()
+            self.bbutton = Button(self.results_window, text="Quit", command=exit)
+            self.bbutton.pack()
+            self.bbutton = Button(self.results_window, text="Retry", command=self.try_again)
+            self.bbutton.pack()
 
     def update_salience(self):
         self.results_window.destroy()
@@ -266,13 +276,14 @@ class Window:
             self.bbutton.pack()
 
     def update_rule(self):
-        self.rule_addition_window.destroy()
-        self.results_window.destroy()
-        self.find_rule_window.destroy()
+        if self.rule_addition_window:
+            self.rule_addition_window.destroy()
+        if self.results_window:
+            self.results_window.destroy()
+        if self.find_rule_window:
+            self.find_rule_window.destroy()
         self.update_rule_window = tk.Toplevel(root)
-        self.update_rule_window.minsize(width=666, height=666)
-        self.update_rule_window.maxsize(width=666, height=666)
-        question = Label(self.update_rule_window, text="What phone do you think is a better choice?")
+        question = Label(self.update_rule_window, text="What phone do you think is a good choice?")
         question.pack()
         self.phone_vars = {}
         for phone in self.phones:
