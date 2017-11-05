@@ -1,6 +1,14 @@
 from Components.WorkingMemory import WorkingMemory
 from Components.ComplexRule import ComplexRule
 
+"""Provides a class to preform forward chaining inference.
+Uses working memory to get necessary rules.
+Rules that have already been fired can be passed in later to assist self-learning
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
 
 class InferenceEngine:
     def __init__(self, working_memory=WorkingMemory(), fired_rules=[]):
@@ -19,6 +27,7 @@ class InferenceEngine:
     def get_fired_rules(self):
         return self.fired_rules
 
+    # The main inference method
     def infer(self):
         user = self.working_memory.get_user()
         rules = self.working_memory.get_rules()
@@ -45,6 +54,7 @@ class InferenceEngine:
                 if rule_antecedents.items() == user_attributes.items():
                     potential_complex_rules.append(rule)
 
+        # Isolate our rule as the rule with maximum salience
         our_rule = self.get_max_salience(potential_complex_rules)
         self.fired_rules.append(our_rule)
         for phone in phones:

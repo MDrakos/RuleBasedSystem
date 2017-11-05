@@ -12,6 +12,13 @@ from Components.ComplexRule import ComplexRule
 from Components.Phone import Phone
 from PIL import ImageTk, Image
 
+"""GUI to provide user interaction with the Knowledge Based System.
+"""
+
+
+__author__ = "Won"
+__version__ = "1.0"
+
 
 class Window:
     def __init__(self, master):
@@ -317,10 +324,18 @@ class Window:
                     new_topic = last_fired_rule.get_topic()
                     new_salience = last_fired_rule.get_salience() + 1
                     new_rule = ComplexRule(new_antecedents, var, new_topic, new_salience)
-                    self.wm.add_rule(new_rule)
-                    self.rules = self.wm.get_rules()
-                    self.inference_engine.set_working_memory(self.wm)
+                    for rule in self.wm.get_rules():
+                        if isinstance(rule.get_antecedent(), dict):
+                            if new_rule.get_antecedent().items() == rule.get_antecedent().items() and \
+                                    new_rule.get_consequent() == rule.get_consequent() and \
+                                    new_rule.get_topic() == rule.get_topic():
+                                messagebox.showinfo("Already Exists", "This rule already exists")
+                                self.try_again_messagebox()
+                                return 0
 
+            self.wm.add_rule(new_rule)
+            self.rules = self.wm.get_rules()
+            self.inference_engine.set_working_memory(self.wm)
             messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
             self.try_again_messagebox()
         else:

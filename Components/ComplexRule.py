@@ -38,3 +38,7 @@ class ComplexRule:
 
     def get_salience(self):
         return self.salience
+
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+

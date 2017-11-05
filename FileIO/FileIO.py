@@ -6,6 +6,14 @@ from Components.Question import Question
 from Components.Phone import Phone
 
 
+"""Basic methods to load rule, question and phone files.
+Files must be in JSON array format
+"""
+
+__author__ = 'Mike'
+__version__ = '1.0'
+
+
 def load_rules(filepath):
     rules = []
     with open(filepath) as json_data:
