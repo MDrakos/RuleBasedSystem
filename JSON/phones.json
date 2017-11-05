@@ -16,6 +16,7 @@
         "batteryLife": "good",
         "display": "6.3",
         "camera": "Dual 12 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -35,6 +36,7 @@
         "batteryLife": "good",
         "display": "6",
         "camera": "12.2 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -54,6 +56,7 @@
         "batteryLife": "average",
         "display": "5",
         "camera": "12.2 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -73,6 +76,7 @@
         "batteryLife": "good",
         "display": "5.7",
         "camera": "Dual 13 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -92,6 +96,7 @@
         "batteryLife": "good",
         "display": "4.5",
         "camera": "12 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "average",
         "price": "medium"
     },
     {
@@ -111,6 +116,7 @@
         "batteryLife": "good",
         "display": "5.46",
         "camera": "19 MP (rear camera), 13 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -130,6 +136,7 @@
         "batteryLife": "average",
         "display": "5.8",
         "camera": "12 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -149,6 +156,7 @@
         "batteryLife": "good",
         "display": "5.5",
         "camera": "Dual 16 MP + 20 MP (rear camera), 16 MP (front camera)",
+        "cameraQuality": "good",
         "price": "medium"
     },
     {
@@ -168,6 +176,7 @@
         "batteryLife": "average",
         "display": "5.2",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "poor",
         "price": "medium"
     },
     {
@@ -187,6 +196,7 @@
         "batteryLife": "poor",
         "display": "5.5",
         "camera": "Dual 12 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "good",
         "price": "medium"
     },
     {
@@ -206,6 +216,7 @@
         "batteryLife": "poor",
         "display": "4.7",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -225,6 +236,7 @@
         "batteryLife": "average",
         "display": "5.5",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -244,6 +256,7 @@
         "batteryLife": "average",
         "display": "5.8",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "cameraQuality": "good",
         "price": "expensive"
     },
     {
@@ -263,6 +276,7 @@
         "batteryLife": "good",
         "display": "5.5",
         "camera": "16 MP (rear camera), 16 MP (front camera)",
+        "cameraQuality": "good",
         "price": "medium"
     },
     {
@@ -282,6 +296,7 @@
         "batteryLife": "good",
         "display": "5.7",
         "camera": "Dual 16 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "good",
         "price": "medium"
     },
     {
@@ -301,6 +316,7 @@
         "batteryLife": "poor",
         "display": "5.5",
         "camera": "13 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "average",
         "price": "cheap"
     },
     {
@@ -320,6 +336,7 @@
         "batteryLife": "good",
         "display": "5.5",
         "camera": "12.3 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "good",
         "price": "medium"
     },
     {
@@ -339,6 +356,7 @@
         "batteryLife": "average",
         "display": "5",
         "camera": "12.3 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "average",
         "price": "medium"
     },
     {
@@ -358,6 +376,7 @@
         "batteryLife": "average",
         "display": "5.1",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "average",
         "price": "medium"
     },
     {
@@ -377,6 +396,7 @@
         "batteryLife": "good",
         "display": "5.5",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "average",
         "price": "medium"
     },
     {
@@ -396,6 +416,7 @@
         "batteryLife": "average",
         "display": "5.2",
         "camera": "12 MP (rear camera), 5 MP (front camera)",
+        "cameraQuality": "poor",
         "price": "medium"
     },
     {
@@ -415,6 +436,7 @@
         "batteryLife": "average",
         "display": "5.3",
         "camera": "Dual 16 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "good",
         "price": "medium"
     },
     {
@@ -434,6 +456,7 @@
         "batteryLife": "poor",
         "display": "5",
         "camera": "23 MP (rear camera), 13 MP (front camera",
+        "cameraQuality": "good",
         "price": "medium"
     },
     {
@@ -453,6 +476,7 @@
         "batteryLife": "average",
         "display": "5.2",
         "camera": "12 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "poor",
         "price": "cheap"
     },
     {
@@ -472,6 +496,7 @@
         "batteryLife": "poor",
         "display": "5.2",
         "camera": "13 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "poor",
         "price": "cheap"
     },
     {
@@ -491,6 +516,7 @@
         "batteryLife": "average",
         "display": "5.2",
         "camera": "23 MP (rear camera), 13 MP (front camera)",
+        "cameraQuality": "good",
         "price": "cheap"
     },
     {
@@ -510,6 +536,7 @@
         "batteryLife": "average",
         "display": "5.5",
         "camera": "16 MP (rear camera), 8 MP (front camera)",
+        "cameraQuality": "average",
         "price": "cheap"
     },
     {
@@ -529,6 +556,7 @@
         "batteryLife": "poor",
         "display": "4.7",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "cameraQuality": "average",
         "price": "cheap"
     },
     {
@@ -548,6 +576,7 @@
         "batteryLife": "average",
         "display": "5.5",
         "camera": "12 MP (rear camera), 7 MP (front camera)",
+        "cameraQuality": "good",
         "price": "medium"
     }
 ]

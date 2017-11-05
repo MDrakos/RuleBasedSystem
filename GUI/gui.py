@@ -30,6 +30,7 @@ class Window:
         self.rule_addition_window = None
         self.find_rule_window = None
         self.update_salience_window = None
+        self.display_specs_window = None
 
         image = Image.open("my_logo.png")
         photo = ImageTk.PhotoImage(image)
@@ -213,6 +214,8 @@ class Window:
             self.bbutton.pack()
             self.bbutton = Button(self.results_window, text="No", command=self.rule_addition_query)
             self.bbutton.pack()
+            self.bbutton = Button(self.results_window, text="See phone specifications", command=self.display_specs)
+            self.bbutton.pack()
         else:
             Label(self.results_window, text="Uh oh. I couldn't find a phone").pack()
 
@@ -224,13 +227,22 @@ class Window:
             self.bbutton.pack()
 
     def update_salience(self):
-        self.results_window.destroy()
-        self.update_salience_window = tk.Toplevel(root)
         last_fired_rule = self.inference_engine.get_fired_rules()[-1]
         last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
         messagebox.showinfo("Thanks", "Great! Thank you :)")
 
         self.try_again_messagebox()
+
+    def display_specs(self):
+        self.results_window.destroy()
+        self.display_specs_window = tk.Toplevel(root)
+        phone = self.wm.get_user().get_phone()
+        print(phone)
+        phone_attributes = phone.get_attributes()
+        for attribute in phone_attributes:
+            Label(self.display_specs_window, text=attribute + ": " + phone_attributes[attribute]).pack()
+
+        Button(self.display_specs_window, text="Done", command=self.try_again_messagebox).pack()
 
     def rule_addition_query(self):
         self.results_window.destroy()

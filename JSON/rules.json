@@ -85,6 +85,21 @@
     "consequent" : "good"
   },
   {
+    "antecedent" : "Of course",
+    "topic"      : "cameraQuality",
+    "consequent" : "good"
+  },
+  {
+    "antecedent" : "Sometimes",
+    "topic"      : "cameraQuality",
+    "consequent" : "average"
+  },
+  {
+    "antecedent" : "I'm not that kind of person",
+    "topic"      : "cameraQuality",
+    "consequent" : "poor"
+  },
+  {
     "antecedent" : {
       "brand" : "Apple",
       "price" : "expensive"

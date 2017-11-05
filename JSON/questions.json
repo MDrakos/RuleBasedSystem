@@ -34,5 +34,12 @@
     "answer1"   : "Love it",
     "answer3"   : "S'ok",
     "answer2"   : "Hate it"
+  },
+  {
+    "question"  : "Do you take a picture of every meal?",
+    "topic"     : "cameraQuality",
+    "answer1"   : "Of course",
+    "answer3"   : "Sometimes",
+    "answer2"   : "I'm not that kind of person"
   }
 ]
