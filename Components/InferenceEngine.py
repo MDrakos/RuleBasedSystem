@@ -54,6 +54,7 @@ class InferenceEngine:
     def find_new_rule(self):
         phones = self.working_memory.get_phones()
         rules = self.working_memory.get_rules()
+        print(rules)
         fired_rules = self.get_fired_rules()
         last_fired_rule = fired_rules[-1]
         last_fired_rule_antecedents = last_fired_rule.get_antecedent()
@@ -73,13 +74,13 @@ class InferenceEngine:
                 for rule in rules:
                     if rule.get_topic() == 'phone' and rule.get_antecedent().items() == phone_intersect.items() \
                             and rule.get_consequent() == phone.get_model():
-                        print("rule already exists")
-                    else:
-                        new_rule = ComplexRule(last_fired_rule_antecedents, phone.get_model(),
-                                               last_fired_rule.get_topic(), last_fired_rule.get_salience()+1)
-                        return new_rule
+                        return 0
 
-        return 0
+        for potential_phone in potential_phones:
+            new_rule = ComplexRule(last_fired_rule_antecedents, potential_phone.get_model(),
+                                   last_fired_rule.get_topic(), last_fired_rule.get_salience()+1)
+
+        return new_rule
 
     @staticmethod
     def get_max_salience(potential_complex_rules):

@@ -306,6 +306,7 @@ class Window:
     def add_new_rule(self):
         self.wm.add_rule(self.new_rule)
         self.rules = self.wm.get_rules()
+        self.inference_engine.set_working_memory(self.wm)
         messagebox.showinfo("New Rule", "Added new rule")
         try_again = messagebox.askretrycancel("Retry", "Try again?")
         if try_again:
@@ -326,6 +327,7 @@ class Window:
         # Reset User attributes
         self.user.set_answers([])
         self.user.set_attributes({})
+        self.inference_engine.set_working_memory(self.wm)
         self.display_questions()
 
 
