@@ -45,6 +45,11 @@
     "consequent" : "5.5"
   },
   {
+    "antecedent" : "Small",
+    "topic"      : "display",
+    "consequent" : "5"
+  },
+  {
     "antecedent" : "Normal",
     "topic"      : "display",
     "consequent" : "5.8"
@@ -53,6 +58,11 @@
     "antecedent" : "Large",
     "topic"      : "display",
     "consequent" : "6.3"
+  },
+  {
+    "antecedent" : "Large",
+    "topic"      : "display",
+    "consequent" : "6"
   },
   {
     "antecedent" : "Heavy",
@@ -131,5 +141,27 @@
     },
     "topic"      : "phone",
     "consequent" : "Samsung Galaxy Note 8"
+  },
+  {
+    "antecedent" : {
+      "brand" : "Google",
+      "price" : "expensive",
+      "display" : "6",
+      "batteryLife": "good",
+      "cameraQuality": "good"
+    },
+    "topic"      : "phone",
+    "consequent" : "Pixel 2 XL"
+  },
+  {
+    "antecedent" : {
+      "brand" : "Google",
+      "price" : "expensive",
+      "display" : "5",
+      "batteryLife": "average",
+      "cameraQuality": "good"
+    },
+    "topic"      : "phone",
+    "consequent" : "Pixel 2"
   }
 ]
