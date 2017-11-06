@@ -147,7 +147,8 @@ class InferenceEngine:
                         if rule.get_topic() == 'phone' and rule.get_antecedent().items() == phone_intersect.items() \
                                 and rule.get_consequent() == phone.get_model():
                             return 0
-
+            if not potential_phones:
+                return 0
             for potential_phone in potential_phones:
                 new_rule = ComplexRule(user.get_attributes(), potential_phone.get_model(),
                                        'phone', 1)
