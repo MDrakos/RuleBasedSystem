@@ -12,23 +12,53 @@ __version__ = '1.0'
 
 class InferenceEngine:
     def __init__(self, working_memory=WorkingMemory(), fired_rules=[]):
+        """
+        Creates a new inference engine
+
+        :param working_memory: WorkingMemory()
+        :param fired_rules: List
+        """
         self.working_memory = working_memory
         self.fired_rules = fired_rules
 
     def set_working_memory(self, working_memory):
+        """
+        Sets the working memory for the inference engine
+
+        :param working_memory: WorkingMemory()
+        """
         self.working_memory = working_memory
 
     def get_user(self):
+        """
+        Returns user from working memory
+
+        :return: User object
+        """
         return self.working_memory.get_user()
 
     def get_rules(self):
+        """
+        Returns rules from working memory
+
+        :return: list of rules
+        """
         return self.working_memory.get_rules()
 
     def get_fired_rules(self):
+        """
+        Returns a list of fired rules
+
+        :return: list of fired rules
+        """
         return self.fired_rules
 
-    # The main inference method
     def infer(self):
+        """
+        The main inference method
+        First checks simple rules and fires rules that correspond to user answers.
+        Next checks complex rules against user attributes and fires a complex rule if one is found
+        """
         user = self.working_memory.get_user()
         rules = self.working_memory.get_rules()
         phones = self.working_memory.get_phones()
@@ -126,6 +156,12 @@ class InferenceEngine:
 
     @staticmethod
     def get_max_salience(potential_complex_rules):
+        """
+        Static method to get the max salience value from a list of rules
+
+        :param potential_complex_rules: list of complex rules
+        :return: complex rule with the max salience value
+        """
         max_salience = 0
         for complex_rule in potential_complex_rules:
             if complex_rule.get_salience() >= max_salience:

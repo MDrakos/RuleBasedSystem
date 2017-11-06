@@ -15,6 +15,13 @@ __version__ = '1.0'
 
 
 def load_rules(filepath):
+    """
+    Loads rules from a given filepath
+    Rules must be in JSON array format
+
+    :param filepath: string
+    :return: list of rule objects
+    """
     rules = []
     with open(filepath) as json_data:
         data = json.load(json_data)
@@ -30,6 +37,13 @@ def load_rules(filepath):
 
 
 def load_phones(filepath):
+    """
+    Loads phones from a given filepath
+    Phones must be in JSON array format
+
+    :param filepath: string
+    :return: list of phone objects
+    """
     phones = []
     attributes = {}
     with open(filepath) as json_data:
@@ -44,6 +58,13 @@ def load_phones(filepath):
 
 
 def load_questions(filepath):
+    """
+    Loads questions from a given filepath
+    Questions must be in JSON array format
+
+    :param filepath: string
+    :return: list of question objects
+    """
     questions = []
     with open(filepath) as json_data:
         data = json.load(json_data)
