@@ -281,7 +281,8 @@ class Window:
         for attribute in phone_attributes:
             Label(self.display_specs_window, text=attribute + ": " + phone_attributes[attribute]).pack()
 
-        Button(self.display_specs_window, text="Done", command=self.try_again_messagebox).pack()
+        Button(self.display_specs_window, text="Accept phone", command=self.update_salience).pack()
+        Button(self.display_specs_window, text="Try again", command=self.try_again_messagebox).pack()
 
     # This function will add rule to the query using the button. Program can add rules by itself too.
     def rule_addition_query(self):
@@ -429,6 +430,8 @@ class Window:
             self.questions_window.destroy()
         if self.update_rule_window:
             self.update_rule_window.destroy()
+        if self.display_specs_window:
+            self.display_specs_window.destroy()
 
         # Reset User attributes
         self.user.set_answers([])
