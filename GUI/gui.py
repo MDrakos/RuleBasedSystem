@@ -171,7 +171,6 @@ class Window:
                 answers = question.get_possible_answers()
 
                 for answer in answers:
-                    # print(answer)
                     var = IntVar()
                     self.vars[(question.get_topic(), answer)] = var
                     check = Checkbutton(self.questions_window, text=answer, variable=var)
