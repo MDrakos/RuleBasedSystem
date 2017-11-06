@@ -226,7 +226,9 @@ class Window:
         else:
             Label(self.results_window, text="Uh oh. I couldn't find a phone").pack()
 
-            self.bbutton = Button(self.results_window, text="Add Rule?", command=self.update_rule)
+            self.bbutton = Button(self.results_window, text="Let me try to find a rule?", command=self.find_rule)
+            self.bbutton.pack()
+            self.bbutton = Button(self.results_window, text="Add rule manually?", command=self.update_rule)
             self.bbutton.pack()
             self.bbutton = Button(self.results_window, text="Quit", command=exit)
             self.bbutton.pack()
@@ -265,7 +267,10 @@ class Window:
         self.bbutton.pack()
 
     def find_rule(self):
-        self.rule_addition_window.destroy()
+        if self.rule_addition_window:
+            self.rule_addition_window.destroy()
+        if self.results_window:
+            self.results_window.destroy()
         self.find_rule_window = tk.Toplevel(root)
         self.new_rule = self.inference_engine.find_new_rule()
 

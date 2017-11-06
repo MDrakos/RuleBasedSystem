@@ -67,32 +67,62 @@ class InferenceEngine:
     def find_new_rule(self):
         phones = self.working_memory.get_phones()
         rules = self.working_memory.get_rules()
+        user = self.working_memory.get_user()
         fired_rules = self.get_fired_rules()
         last_fired_rule = fired_rules[-1]
-        last_fired_rule_antecedents = last_fired_rule.get_antecedent()
-        potential_phones = []
+        new_rule = ComplexRule()
 
-        for phone in phones:
-            phone_intersect = {}
-            phone_attributes = phone.get_attributes()
-            intersecting_keys = set(phone_attributes.keys() & last_fired_rule_antecedents.keys())
-            for key in intersecting_keys:
-                if key in phone_attributes:
-                    phone_intersect[key] = phone_attributes[key]
+        # Check if a complex rule was actually fired
+        if last_fired_rule:
+            last_fired_rule_antecedents = last_fired_rule.get_antecedent()
+            potential_phones = []
 
-            if last_fired_rule_antecedents.items() == phone_intersect.items():
-                potential_phones.append(phone)
+            for phone in phones:
+                phone_intersect = {}
+                phone_attributes = phone.get_attributes()
+                intersecting_keys = set(phone_attributes.keys() & last_fired_rule_antecedents.keys())
+                for key in intersecting_keys:
+                    if key in phone_attributes:
+                        phone_intersect[key] = phone_attributes[key]
 
-                for rule in rules:
-                    if rule.get_topic() == 'phone' and rule.get_antecedent().items() == phone_intersect.items() \
-                            and rule.get_consequent() == phone.get_model():
-                        return 0
+                if last_fired_rule_antecedents.items() == phone_intersect.items():
+                    potential_phones.append(phone)
 
-        for potential_phone in potential_phones:
-            new_rule = ComplexRule(last_fired_rule_antecedents, potential_phone.get_model(),
-                                   last_fired_rule.get_topic(), last_fired_rule.get_salience()+1)
+                    for rule in rules:
+                        if rule.get_topic() == 'phone' and rule.get_antecedent().items() == phone_intersect.items() \
+                                and rule.get_consequent() == phone.get_model():
+                            return 0
 
-        return new_rule
+            for potential_phone in potential_phones:
+                new_rule = ComplexRule(last_fired_rule_antecedents, potential_phone.get_model(),
+                                       last_fired_rule.get_topic(), last_fired_rule.get_salience()+1)
+
+            return new_rule
+
+        # If a complex rule wasn't fired, we will have to create a new one
+        else:
+            potential_phones = []
+            for phone in phones:
+                phone_intersect = {}
+                phone_attributes = phone.get_attributes()
+                intersecting_keys = set(phone_attributes.keys() & user.get_attributes().keys())
+                for key in intersecting_keys:
+                    if key in phone_attributes:
+                        phone_intersect[key] = phone_attributes[key]
+
+                if user.get_attributes().items() == phone_intersect.items():
+                    potential_phones.append(phone)
+
+                    for rule in rules:
+                        if rule.get_topic() == 'phone' and rule.get_antecedent().items() == phone_intersect.items() \
+                                and rule.get_consequent() == phone.get_model():
+                            return 0
+
+            for potential_phone in potential_phones:
+                new_rule = ComplexRule(user.get_attributes(), potential_phone.get_model(),
+                                       'phone', 1)
+
+            return new_rule
 
     @staticmethod
     def get_max_salience(potential_complex_rules):
