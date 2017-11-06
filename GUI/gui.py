@@ -39,54 +39,64 @@ class Window:
         self.update_salience_window = None
         self.display_specs_window = None
 
+        #puts an image to the GUI
         image = Image.open("my_logo.png")
         photo = ImageTk.PhotoImage(image)
         label = Label(image=photo)
         label.image = photo  # keep a reference!
         label.grid(row=0, column=2)
 
+        #Asking questions to enter the user's name
         first_name_label = Label(master, text="Enter first name").grid(row=1, column=1)
         self.first_name = Entry(master).grid(row=1, column=2)
         last_name_label = Label(master, text="Enter last name").grid(row=2, column=1)
         self.last_name = Entry(master).grid(row=2, column=2)
 
+        #Makes a label for the Rules JSON
         self.rules = []
         self.rules_file = " "
         rules_json = Label(master, text="Rules JSON").grid(row=3, column=0)
         bar_placeholder1 = Entry(master, textvariable=self.rules_file).grid(row=3, column=2)
 
+        #Makes a label for the Questions JSON
         self.questions = []
         self.questions_file = " "
         questions_json = Label(master, text="Questions JSON").grid(row=4, column=0)
         bar_placeholder2 = Entry(master, textvariable=self.questions_file).grid(row=4, column=2)
 
+        # Makes a label for the Phones JSON
         self.phones = []
         self.phones_file = " "
         phones_json = Label(master, text="Phones JSON").grid(row=5, column=0)
         bar_placeholder2 = Entry(master, textvariable=self.phones_file).grid(row=5, column=2)
 
+        #Makes the button for the Load rules json file from the browsed file
         self.rules_button = Button(master, text="Load Rules", command=self.load_rules)
         self.rules_button.grid(row=3, column=4)
-
         self.browse_rules = Button(master, text="Browse", command=self.browse_rules_file)
         self.browse_rules.grid(row=3, column=1)
 
+        #Makes the button for the Load questions json file from the browsed file
         self.questions_button = Button(master, text="Load Questions", command=self.load_questions)
         self.questions_button.grid(row=4, column=4, sticky=W + E)
         self.browse_questions = Button(master, text="Browse", command=self.browse_questions_file)
         self.browse_questions.grid(row=4, column=1)
 
+        #Makes the button for the Load phones json file from the browsed file
         self.phones_button = Button(master, text="Load Phones", command=self.load_phones)
         self.phones_button.grid(row=5, column=4, sticky=W + E)
         self.browse_phones = Button(master, text="Browse", command=self.browse_phones_file)
         self.browse_phones.grid(row=5, column=1)
 
+        #A button that loads all of rules, questions and phones at the same time
         self.load_all_button = Button(master, text="Load all", command=self.load_all)
         self.load_all_button.grid(row=4, column=5, sticky=W + E)
 
+        #A button that calls the display questions that needs to be answered by the user
         self.next_button = Button(master, text="Next", command=self.display_questions)
         self.next_button.grid(row=6, column=2)
 
+    #Function to browse the rule files for the GUI
     def browse_rules_file(self):
         from tkinter.filedialog import askopenfilename
         first_file_path = StringVar()
@@ -97,6 +107,7 @@ class Window:
         self.rules_file = askopenfilename()
         first_file_path.set(self.rules_file)
 
+    # Function to browse the question files for the GUI
     def browse_questions_file(self):
         from tkinter.filedialog import askopenfilename
         second_file_path = StringVar()
@@ -107,6 +118,7 @@ class Window:
         self.questions_file = askopenfilename()
         second_file_path.set(self.questions_file)
 
+    #Function to browse the phone files
     def browse_phones_file(self):
         from tkinter.filedialog import askopenfilename
         third_file_path = StringVar()
@@ -117,6 +129,7 @@ class Window:
         self.phones_file = askopenfilename()
         third_file_path.set(self.phones_file)
 
+    #Function that loads rules to the working memory and knowledge based
     def load_rules(self):
         if self.rules_file:
             self.rules = fileIO.load_rules(self.rules_file)
@@ -128,6 +141,7 @@ class Window:
             # if self.wm.get_rules():
             #     messagebox.showinfo("Load Successful", "Rules file loaded successfully")
 
+    #Function that loads questions to the working memory
     def load_questions(self):
         if self.questions_file:
             self.questions = fileIO.load_questions(self.questions_file)
@@ -138,6 +152,7 @@ class Window:
             # if self.wm.get_rules():
             #     messagebox.showinfo("Load Successful", "Questions file loaded successfully")
 
+    #Function that loads phones to the working memory
     def load_phones(self):
         if self.phones_file:
             self.phones = fileIO.load_phones(self.phones_file)
@@ -148,6 +163,7 @@ class Window:
             # if self.wm.get_rules():
             #     messagebox.showinfo("Load Successful", "Phones file loaded successfully")
 
+    #Fuction that can be use to load all rules, questions and phones at the same time.
     def load_all(self):
         self.load_rules()
         self.load_questions()
@@ -156,20 +172,26 @@ class Window:
         if self.questions_file and self.phones_file and self.rules_file:
             messagebox.showinfo("Success", "All files loaded successfully")
 
+    #A fuction that displays all the questions that needs to be answered from the user
     def display_questions(self):
         if self.user.first_name and self.user.last_name:
             self.user.set_user_first_name(self.first_name.get())
             self.user.set_user_last_name(self.last_name.get())
+
+        #This set the question_window that can be called
         self.questions_window = tk.Toplevel(root)
+
+        #Sets the size of the frame size
         self.questions_window.minsize(width=666, height=666)
         self.questions_window.maxsize(width=666, height=666)
+
+        #From working memory's questions, it will get the possible answer from the user
         if self.wm.get_questions():
             self.vars = {}
             for question in self.wm.get_questions():
                 question_label = Label(self.questions_window, text=question.get_question())
                 question_label.pack()
                 answers = question.get_possible_answers()
-
                 for answer in answers:
                     # print(answer)
                     var = IntVar()
@@ -177,13 +199,16 @@ class Window:
                     check = Checkbutton(self.questions_window, text=answer, variable=var)
                     check.pack()
 
+        # A button that calls the function set_answer that get the perfect phone from the user
         submit = Button(self.questions_window, text='Submit', command=self.set_answer)
         submit.pack()
 
+    # This function is to check the function of the
     def check_states(self):
         for var in self.vars:
             print(self.vars.get(var).get())
 
+    # This fucnction sets the answer from the user's selected answer
     def set_answer(self):
         self.questions_window.destroy()
         for var in self.vars:
@@ -194,9 +219,12 @@ class Window:
                 ans = Answer(user_topic, user_answer)
                 self.user.set_answer(ans)
 
+        # inference engine takes in to work with the working memeory
         self.inference_engine = InferenceEngine(self.wm)
         self.inference_engine.infer()
         self.user_result = self.wm.get_user().get_phone()
+
+        # calls fucntion display result that will be show the perfect smartphone to the user
         self.display_results()
 
     def display_results(self):
@@ -204,6 +232,7 @@ class Window:
 
         # Explanations
         if self.user_result:
+            # This will trigger if the selected rules had a perfect matching for the user and shows the phone specification if user wants and ability to add self learning
             phone = self.wm.get_user().get_phone()
             attributes = phone.get_attributes()
             Label(self.results_window, text="Best matched phone: ").pack()
@@ -224,8 +253,8 @@ class Window:
             self.bbutton = Button(self.results_window, text="See phone specifications", command=self.display_specs)
             self.bbutton.pack()
         else:
+            # This will be triggerd if the selected rules didn't have the resulting phone that will lead to self learning
             Label(self.results_window, text="Uh oh. I couldn't find a phone").pack()
-
             self.bbutton = Button(self.results_window, text="Let me try to find a rule?", command=self.find_rule)
             self.bbutton.pack()
             self.bbutton = Button(self.results_window, text="Add rule manually?", command=self.update_rule)
@@ -235,6 +264,7 @@ class Window:
             self.bbutton = Button(self.results_window, text="Retry", command=self.try_again)
             self.bbutton.pack()
 
+    # This function that will update the salience
     def update_salience(self):
         last_fired_rule = self.inference_engine.get_fired_rules()[-1]
         last_fired_rule.set_salience(last_fired_rule.get_salience()+1)
@@ -242,6 +272,7 @@ class Window:
 
         self.try_again_messagebox()
 
+    # A function that can be used to display all the phone specification
     def display_specs(self):
         self.results_window.destroy()
         self.display_specs_window = tk.Toplevel(root)
@@ -253,6 +284,7 @@ class Window:
 
         Button(self.display_specs_window, text="Done", command=self.try_again_messagebox).pack()
 
+    # This function will add rule to the query using the button. Program can add rules by itself too.
     def rule_addition_query(self):
         self.results_window.destroy()
         self.rule_addition_window = tk.Toplevel(root)
@@ -266,6 +298,7 @@ class Window:
         self.bbutton = Button(self.rule_addition_window, text="Quit", command=exit)
         self.bbutton.pack()
 
+    # This function will find the rules
     def find_rule(self):
         if self.rule_addition_window:
             self.rule_addition_window.destroy()
@@ -286,17 +319,20 @@ class Window:
             new_rule_consequents_text = self.new_rule.get_consequent()
             Label(self.find_rule_window, text=new_rule_consequents_text).pack()
 
+            #Buttons that will add new set of rules or not
             self.bbutton = Button(self.find_rule_window, text="Add", command=self.add_new_rule)
             self.bbutton.pack()
             self.bbutton = Button(self.find_rule_window, text="Don't Add", command=self.update_rule)
             self.bbutton.pack()
         else:
+            #Buttons that will add rules manurally or not
             Label(self.find_rule_window, text="Couldn't find new rule").pack()
             self.bbutton = Button(self.find_rule_window, text="Add rule manually?", command=self.update_rule)
             self.bbutton.pack()
             self.bbutton = Button(self.find_rule_window, text="Quit", command=exit)
             self.bbutton.pack()
 
+    # This function updates the rules if the user wants to change the resulting answer
     def update_rule(self):
         if self.rule_addition_window:
             self.rule_addition_window.destroy()
@@ -318,6 +354,7 @@ class Window:
         submit = Button(self.update_rule_window, text='Submit', command=self.set_new_rule)
         submit.pack()
 
+    # This function sets the new rules to the program that is part of self learning
     def set_new_rule(self):
         # If a complex rule fired and was wrong, need to correct it.
         last_fired_rule = self.inference_engine.get_fired_rules()[-1]
@@ -364,6 +401,7 @@ class Window:
             messagebox.showinfo("New Rule", "New rule created for " + new_rule.get_consequent())
             self.try_again_messagebox()
 
+    # This funcgtion adds new rules to the program
     def add_new_rule(self):
         self.wm.add_rule(self.new_rule)
         self.rules = self.wm.get_rules()
@@ -378,6 +416,7 @@ class Window:
         else:
             quit(0)
 
+    # A function that is for trying again to do the GUI starting from the beginning
     def try_again(self):
         if self.update_salience_window:
             self.update_salience_window.destroy()
@@ -400,6 +439,7 @@ class Window:
 
 
 root = Tk()
+# Makes title to be cellphone selector
 root.title("Cellphone selector")
 window = Window(root)
 name_start = Window(root)
