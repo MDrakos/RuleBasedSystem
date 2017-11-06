@@ -95,6 +95,11 @@ class InferenceEngine:
                 user.set_phone(None)
 
     def find_new_rule(self):
+        """
+        Compares phones to either previous fired rules or user attributes in order to find a new rule
+
+        :return: Rule or 0 if no rule is found
+        """
         phones = self.working_memory.get_phones()
         rules = self.working_memory.get_rules()
         user = self.working_memory.get_user()
