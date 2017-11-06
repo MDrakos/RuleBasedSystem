@@ -17,29 +17,29 @@
   {
     "question"  : "How big are your hands?",
     "topic"     : "display",
-    "answer1"   : "Carney (small)",
+    "answer1"   : "Small",
     "answer2"   : "Normal",
-    "answer3"   : "Yeti (large)"
+    "answer3"   : "Large"
   },
   {
-    "question"  : "Do you even lift?",
+    "question"  : "Weight preference",
     "topic"     : "heaviness",
-    "answer1"   : "Yeah bro",
-    "answer3"   : "I do cardio",
-    "answer2"   : "I'm weak"
+    "answer1"   : "Heavy",
+    "answer3"   : "Average",
+    "answer2"   : "Light"
   },
   {
-    "question"  : "How much do you love charging your phone?",
+    "question"  : "How important is battery life?",
     "topic"     : "batteryLife",
-    "answer1"   : "Love it",
-    "answer3"   : "S'ok",
-    "answer2"   : "Hate it"
+    "answer1"   : "Not important",
+    "answer3"   : "Indifferent",
+    "answer2"   : "Very important"
   },
   {
-    "question"  : "Do you take a picture of every meal?",
+    "question"  : "How important is camera quality?",
     "topic"     : "cameraQuality",
-    "answer1"   : "Of course",
-    "answer3"   : "Sometimes",
-    "answer2"   : "I'm not that kind of person"
+    "answer1"   : "Very important",
+    "answer3"   : "Indifferent",
+    "answer2"   : "Not important"
   }
 ]

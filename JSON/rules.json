@@ -40,7 +40,7 @@
     "consequent" : "expensive"
   },
   {
-    "antecedent" : "Carney (small)",
+    "antecedent" : "Small",
     "topic"      : "display",
     "consequent" : "5.5"
   },
@@ -50,52 +50,52 @@
     "consequent" : "5.8"
   },
   {
-    "antecedent" : "Yeti (large)",
+    "antecedent" : "Large",
     "topic"      : "display",
     "consequent" : "6.3"
   },
   {
-    "antecedent" : "Yeah bro",
+    "antecedent" : "Heavy",
     "topic"      : "heaviness",
     "consequent" : "heavy"
   },
   {
-    "antecedent" : "I do cardio",
+    "antecedent" : "Average",
     "topic"      : "heaviness",
     "consequent" : "average"
   },
   {
-    "antecedent" : "I'm weak",
+    "antecedent" : "Light",
     "topic"      : "heaviness",
     "consequent" : "light"
   },
   {
-    "antecedent" : "Love it",
+    "antecedent" : "Not important",
     "topic"      : "batteryLife",
     "consequent" : "poor"
   },
   {
-    "antecedent" : "S'ok",
+    "antecedent" : "Indifferent",
     "topic"      : "batteryLife",
     "consequent" : "average"
   },
   {
-    "antecedent" : "Hate it",
+    "antecedent" : "Very important",
     "topic"      : "batteryLife",
     "consequent" : "good"
   },
   {
-    "antecedent" : "Of course",
+    "antecedent" : "Very important",
     "topic"      : "cameraQuality",
     "consequent" : "good"
   },
   {
-    "antecedent" : "Sometimes",
+    "antecedent" : "Indifferent",
     "topic"      : "cameraQuality",
     "consequent" : "average"
   },
   {
-    "antecedent" : "I'm not that kind of person",
+    "antecedent" : "Not important",
     "topic"      : "cameraQuality",
     "consequent" : "poor"
   },
